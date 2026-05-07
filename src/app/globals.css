@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+:root {
+  --primary-color: hsl(0, 0%, 78%);
+  --secondary-color: hsl(60, 100%, 99%);
+
+  --blue-200: hsl(223, 57%, 49%);
+  --blue-500: hsl(223, 60%, 46%);
+  --blue-800: hsl(225, 97%, 13%);
+
+  --gray: hsl(224, 13%, 22%);
+
+  --surface-card: rgba(221, 221, 221, 0.06);
+  --surface-card-hover: rgba(221, 221, 221, 0.09);
+
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-body: "Manrope", sans-serif;
+}
+
+body {
+  background: var(--blue-800);
+  font-family: var(--font-body);
+  color: var(--primary-color);
+  position: relative;
+}
+
+/* *{
+  outline: 1px dashed orange;
+} */
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  background: radial-gradient(
+    circle,
+    rgba(1, 17, 64, 1) 0%,
+    rgba(0, 2, 13, 1) 100%
+  );
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  color: var(--secondary-color);
+}
+
+@layer base {
+  a,
+  p,
+  button,
+  span,
+  label,
+  input {
+    @apply text-[1rem] md:text-[1.3rem];
+  }
+  section {
+    @apply max-w-390 mx-auto px-4 md:px-16;
+  }
+  a {
+    color: var(--secondary-color);
+  }
+}
+
+@layer utilities {
+  .font-title {
+    font-family: var(--font-heading);
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.13) inset;
+    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.13) inset;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+}
