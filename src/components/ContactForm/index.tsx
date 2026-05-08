@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import {
   MailIcon,
   MessageSquareIcon,
@@ -7,6 +6,7 @@ import {
   SendIcon,
   CircleAlertIcon,
 } from "lucide-react";
+import { ActionGradient } from "../ActionGradient";
 
 export function ContactForm() {
   const inputGroupStyle = "flex flex-col gap-0.5";
@@ -88,27 +88,7 @@ export function ContactForm() {
           ></textarea>
         </div>
       </div>
-      <button
-        className={clsx(
-          "cursor-pointer",
-          "p-2",
-          "rounded-xl",
-          "border",
-          "border-white/50",
-          "font-semibold",
-          "transition",
-          "duration-1000",
-          "bg-[radial-gradient(circle,rgba(17,53,159,1)_0%,rgba(13,43,156,1)_24%,rgba(10,32,153,1)_49%,rgba(19,0,52,1)_94%)]",
-          "flex",
-          "items-center",
-          "justify-center",
-          "gap-3",
-          "hover:brightness-120",
-        )}
-      >
-        {" "}
-        <SendIcon /> Enviar Mensagem
-      </button>
+      <ActionGradient text="Enviar" icon={<SendIcon />} type="submit" />
     </form>
   );
 }

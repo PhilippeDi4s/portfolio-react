@@ -1,15 +1,15 @@
 import clsx from "clsx";
+import Link from "next/link";
 
 type TransparentLinkProps = {
-  link: string;
-  text: string;
-  icon?: React.ReactNode;
-};
+  href: string;
+  children: React.ReactNode
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export function TransparentLink({ link, text, icon }: TransparentLinkProps) {
+export function TransparentLink({ href, children, ...props}: TransparentLinkProps) {
   return (
-    <a
-      href={link}
+    <Link
+      href={href}
       className={clsx(
         "flex",
         "gap-3",
@@ -30,9 +30,9 @@ export function TransparentLink({ link, text, icon }: TransparentLinkProps) {
         "md:px-6",
         "md:py-3",
       )}
+      {...props}
     >
-      {text}
-      {icon}
-    </a>
+      {children}
+    </Link>
   );
 }

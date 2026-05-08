@@ -1,13 +1,12 @@
+import { Section } from "../../Section";
+
 type ComponentsPosition = "center" | "start" | "end";
 
 type SplitLayoutProps = {
-  leftContent: React.ReactNode;
-  rightContent: React.ReactNode;
+  sectionId?: string;
+  children: React.ReactNode;
   alignComponents?: ComponentsPosition;
   alignComponentsDesktop?: ComponentsPosition;
-  leftContentPosition?: ComponentsPosition;
-  rightContentPosition?: ComponentsPosition;
-  contentSize?: [number, number];
 };
 
 const alignmentClasses = {
@@ -22,17 +21,15 @@ const responsiveAlignmentClasses = {
   end: "lg:items-end",
 };
 
-export function SplitLayout({
-  leftContent,
-  rightContent,
+function SplitLayout({
+  sectionId,
+  children,
   alignComponents = "center",
   alignComponentsDesktop = "start",
-  leftContentPosition = "start",
-  rightContentPosition = "start",
-  contentSize = [1, 1],
 }: SplitLayoutProps) {
   return (
-    <section
+    <Section
+      id={sectionId}
       className={`
         w-full
         flex
@@ -40,25 +37,49 @@ export function SplitLayout({
         gap-8
         ${alignmentClasses[alignComponents]}
         md:gap-12
-        xl:gap-6
         xl:flex-row
         xl:justify-between
         ${responsiveAlignmentClasses[alignComponentsDesktop]}
       `}
     >
-      <div
-        className={`w-full flex flex-col gap-6 ${alignmentClasses[leftContentPosition]}`}
-        style={{ flex: contentSize[0] }}
-      >
-        {leftContent}
-      </div>
-
-      <div
-        className={`w-full flex flex-col gap-6 ${alignmentClasses[rightContentPosition]}`}
-        style={{ flex: contentSize[1] }}
-      >
-        {rightContent}
-      </div>
-    </section>
+      {children}
+    </Section>
   );
 }
+
+function Left({
+  children,
+  className = "",
+  flex = 1,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  flex?: number;
+}) {
+  return (
+    <div className={`w-full flex flex-col gap-6 ${className}`} style={{ flex }}>
+      {children}
+    </div>
+  );
+}
+
+function Right({
+  children,
+  className = "",
+  flex = 1,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  flex?: number;
+}) {
+  return (
+    <div className={`w-full flex flex-col gap-6 ${className}`} style={{ flex }}>
+      {children}
+    </div>
+  );
+}
+
+SplitLayout.Left = Left;
+SplitLayout.Right = Right;
+
+export { SplitLayout };

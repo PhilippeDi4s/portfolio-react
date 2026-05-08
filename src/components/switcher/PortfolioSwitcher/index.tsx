@@ -7,6 +7,7 @@ import { Projects } from "../../sections/Projects";
 import { Certificates } from "../../sections/Certificates";
 import { Stack } from "../../sections/Stack";
 import { AwardIcon, BookOpenIcon, CodeIcon } from "lucide-react";
+import { Section } from "../../Section";
 
 type Portfolio = "projetos" | "certificados" | "stack";
 
@@ -20,7 +21,7 @@ export function PortfolioSwitcher() {
   };
 
   return (
-    <section className="flex flex-col gap-6">
+    <Section className="flex flex-col gap-6" id="portfolio">
       <Heading>{title[isActive]}</Heading>
       <ContentSwitcher>
         <SwitchButton
@@ -47,6 +48,6 @@ export function PortfolioSwitcher() {
       {isActive === "projetos" && <Projects />}
       {isActive === "certificados" && <Certificates />}
       {isActive === "stack" && <Stack />}
-    </section>
+    </Section>
   );
 }

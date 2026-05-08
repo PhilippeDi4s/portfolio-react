@@ -18,6 +18,12 @@
   --font-body: "Manrope", sans-serif;
 }
 
+html,
+body {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--blue-800);
   font-family: var(--font-body);
@@ -59,9 +65,6 @@ h2 {
   label,
   input {
     @apply text-[1rem] md:text-[1.3rem];
-  }
-  section {
-    @apply max-w-390 mx-auto px-4 md:px-16;
   }
   a {
     color: var(--secondary-color);

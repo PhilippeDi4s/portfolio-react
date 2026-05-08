@@ -26,7 +26,6 @@ export function Header() {
         "shadow-[-3px_13px_5px_-5px_rgba(7,19,69,0.77)]",
         "z-10",
         "lg:p-8",
-        "xl:mb-20",
       )}
     >
       <a
@@ -88,7 +87,7 @@ export function Header() {
             </a>
           </li>
           <li>
-            <a href="#sobre" className={linkStyles}>
+            <a href="#sobreMim" className={linkStyles}>
               Sobre mim
             </a>
           </li>
