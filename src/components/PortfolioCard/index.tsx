@@ -52,13 +52,14 @@ export function PortfolioCard({
         "rounded-xl",
         paddingSize[cardPadding],
         "border",
-        "border-white/20",
+        "border-white/1",
         "group",
         "overflow-hidden",
-        "hover:bg-(--surface-card-hover)",
         "transition",
         "duration-500",
         "md:p-8",
+        "hover:bg-(--surface-card-hover)",
+        "hover:border-white/50",
       )}
     >
       {!!cardImgUrl && (

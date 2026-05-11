@@ -10,7 +10,7 @@ export function Section({
   id
 }: SectionProps) {
   return (
-    <section id={id} className={`w-full mx-auto p-6 md:px-16 ${className} lg:px-25 xl:px-30`}>
+    <section id={id} className={`w-full max-w-400 mx-auto p-4 md:px-16 ${className} lg:px-25 xl:px-10`}>
       {children}
     </section>
   );

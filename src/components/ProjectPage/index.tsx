@@ -1,78 +1,107 @@
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+"use client";
+
+import {
+  ArrowLeftIcon,
+} from "lucide-react";
+
+import {
+  Children,
+  isValidElement,
+  ReactNode,
+} from "react";
+
 import { TransparentLink } from "../TransparentLink";
 import { Heading } from "../Heading";
-import Image from "next/image";
-import { ActionGradient } from "../ActionGradient";
-import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
+import { Section } from "../Section";
+import { SplitLayout } from "../layout/SplitLayout";
 
-// type ProjectPageProps = {
-//   projectName: string;
-//   children: React.ReactNode;
-//   imagesSrc: string[];
-//   liveDemoLink: string;
-//   repositoryLink: string;
-// };
+type ProjectPageProps = {
+  projectTitle: string;
+  children: ReactNode;
+};
 
-function ProjectPage() {
+type SlotProps = {
+  children: ReactNode;
+};
+
+function Left({ children }: SlotProps) {
+  return <>{children}</>;
+}
+
+function Right({ children }: SlotProps) {
+  return <>{children}</>;
+}
+
+function Description({ children }: SlotProps) {
+  return (
+    <p className="leading-8 indent-2 md:indent-5">
+      {children}
+    </p>
+  );
+}
+
+function ShortDescription({ children }: SlotProps) {
+  return (
+    <p className="block leading-8 indent-2 md:hidden">
+      {children}
+    </p>
+  );
+}
+
+function ProjectPage({
+  projectTitle,
+  children,
+}: ProjectPageProps) {
+  const childrenArray = Children.toArray(children);
+
+  const leftContent = childrenArray.find(
+    (child) =>
+      isValidElement(child) &&
+      child.type === ProjectPage.Left
+  );
+
+  const rightContent = childrenArray.find(
+    (child) =>
+      isValidElement(child) &&
+      child.type === ProjectPage.Right
+  );
+
   return (
     <>
-      <div className="flex items-center gap-4">
+      <Section className="flex items-center gap-4">
         <TransparentLink href="/">
-          <ArrowLeftIcon /> Voltar
+          <ArrowLeftIcon />
+          Voltar
         </TransparentLink>
-        <span>
-          <span className="brightness-50">Projetos {">"}</span> Chronos Pomodoro
-        </span>
-      </div>
 
-      <section>
-        <Heading textPosition="left">Chronos Pomodoro</Heading>
-        <p>
-          Aplicação web SPA de produtividade baseada na técnica Pomodoro. O
-          usuário pode configurar os tempos de foco e descanso, registrar a
-          tarefa atual e acompanhar o histórico dos ciclos realizados. O
-          cronômetro roda em segundo plano com Web Worker, mantendo a contagem
-          correta mesmo com a aba minimizada.
-        </p>
-        <p>
-          O projeto utiliza React, Context API e useReducer para gerenciamento
-          global de estado, React Router DOM para navegação entre páginas e
-          React Toastify para notificações visuais. Os dados são salvos no Local
-          Storage e a interface permite personalização de temas para melhorar a
-          experiência do usuário.
-        </p>
-        <Image
-          src={"/images/projects-images/chronos_pomodoro.png"}
-          alt="Imagem do projeto"
-          width={500}
-          height={500}
-        />
-        <div className="flex justify-around">
-          <ActionGradient as={Link} href="#">
-            <ArrowRightIcon className="rotate-320" />
-            Live Demo
-          </ActionGradient>
-          
-          <ActionGradient as={Link} href="#">
-            <FaGithub size={25}/>
-            GitHub
-          </ActionGradient>
-        </div>
-      </section>
+        <span>
+          <span className="brightness-50">
+            Projetos {">"}
+          </span>{" "}
+          {projectTitle}
+        </span>
+      </Section>
+
+      <SplitLayout>
+        <SplitLayout.Left flex={0.8}>
+          <Heading textPosition="left">
+            {projectTitle}
+          </Heading>
+
+          {leftContent}
+        </SplitLayout.Left>
+
+        <SplitLayout.Right>
+          {rightContent}
+        </SplitLayout.Right>
+      </SplitLayout>
     </>
   );
 }
 
-function ShortDescription({ children }: { children: React.ReactNode }) {
-  return <p className="block md:hidden">{children}</p>;
-}
-
-function Description({ children }: { children: React.ReactNode }) {
-  return <p className="hidden md:block">{children}</p>;
-}
-
-ProjectPage.ShortDescription = ShortDescription;
+ProjectPage.Left = Left;
+ProjectPage.Right = Right;
 ProjectPage.Description = Description;
+ProjectPage.ShortDescription = ShortDescription;
 
 export { ProjectPage };
