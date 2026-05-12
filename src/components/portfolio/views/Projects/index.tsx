@@ -19,7 +19,7 @@ export function Projects() {
             </p>
             <CardActions
               detailsLink="/projects/chronosPomodoro"
-              liveDemoLink=""
+              liveDemoLink="https://chronos-pomodoro-amber.vercel.app/"
             />
           </>
         }
@@ -37,7 +37,10 @@ export function Projects() {
               adicionar, remover e ajustar itens, confirmar pedidos via modal e
               navegar em uma interface responsiva e acessível.
             </p>
-            <CardActions detailsLink="" liveDemoLink="" />
+            <CardActions
+              detailsLink="/projects/menuCarrinho"
+              liveDemoLink="https://philippedi4s.github.io/product-list-with-cart/"
+            />
           </>
         }
       </PortfolioCard>
@@ -55,7 +58,10 @@ export function Projects() {
               por teclado, feedback para leitores de tela e geração do ingresso
               após o envio bem-sucedido.
             </p>
-            <CardActions detailsLink="" liveDemoLink="" />
+            <CardActions
+              detailsLink="/projects/geradorTickect"
+              liveDemoLink="https://philippedi4s.github.io/conference-ticket-generator/pages/form.html"
+            />
           </>
         }
       </PortfolioCard>
@@ -73,7 +79,10 @@ export function Projects() {
               tratados, com foco em análise de dados, visualização clara e
               layout responsivo.
             </p>
-            <CardActions detailsLink="" liveDemoLink="" />
+            <CardActions
+              detailsLink="/projects/dashboardInterativo"
+              liveDemoLink="https://dashboardinterativo-2025.streamlit.app/"
+            />
           </>
         }
       </PortfolioCard>

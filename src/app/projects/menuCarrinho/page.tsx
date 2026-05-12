@@ -1,6 +1,7 @@
 import { ProjectPage } from "@/src/components/ProjectPage";
 import { ProjectCarousel } from "@/src/components/ProjectPage/carousel/ProjectCarousel";
 import { ProjectActions } from "@/src/components/ProjectPage/ProjectActions";
+import { ProjectDescription } from "@/src/components/ProjectPage/ProjectDescription";
 import { ProjectInfoCard } from "@/src/components/ProjectPage/ProjectInfoCard";
 import { ProjectInfoSection } from "@/src/components/ProjectPage/ProjectInfoSection";
 import { ProjectSummary } from "@/src/components/ProjectPage/ProjectSummary";
@@ -35,30 +36,36 @@ export default function Home() {
       projectTitle={projectTitle}
       left={
         <>
-          <p className="block leading-8 indent-2 md:hidden">
-            Menu interativo desenvolvido com JavaScript, utilizando fetch() para
-            consumir dados de um JSON local e manipulação do DOM para gerar
-            dinamicamente os itens do menu. O projeto conta com carrinho
-            funcional, controle de quantidades, atualização automática de
-            valores e modal de confirmação, mantendo um layout adaptável e uma
-            navegação clara em diferentes tamanhos de tela.
-          </p>
+          <ProjectDescription>
+            <ProjectDescription.ShortDescription>
+              <p>
+                Menu interativo desenvolvido com JavaScript, utilizando fetch()
+                para consumir dados de um JSON local e manipulação do DOM para
+                gerar dinamicamente os itens do menu. O projeto conta com
+                carrinho funcional, controle de quantidades, atualização
+                automática de valores e modal de confirmação, mantendo um layout
+                adaptável e uma navegação clara em diferentes tamanhos de tela.
+              </p>
+            </ProjectDescription.ShortDescription>
 
-          <p className="hidden md:block leading-8 indent-2 md:indent-5">
-            Projeto de menu interativo com carrinho de compras desenvolvido em
-            HTML, CSS e JavaScript, no qual os dados dos itens foram armazenados
-            em um arquivo JSON local e consumidos via fetch(). A partir desses
-            dados, os itens do menu foram renderizados dinamicamente por meio da
-            manipulação do DOM, criando automaticamente os cards com nome,
-            categoria, preço e imagens responsivas.
-          </p>
-
-          <p className="hidden md:block leading-8 indent-2 md:indent-5">
-            O carrinho permite adicionar, remover e ajustar quantidades, com
-            cálculo automático de valores, contador de itens e modal de
-            confirmação de pedido, tudo em uma interface responsiva, com estados
-            de hover e foco e atenção à experiência do usuário.
-          </p>
+            <ProjectDescription.Description>
+              <p>
+                Projeto de menu interativo com carrinho de compras desenvolvido
+                em HTML, CSS e JavaScript, no qual os dados dos itens foram
+                armazenados em um arquivo JSON local e consumidos via fetch(). A
+                partir desses dados, os itens do menu foram renderizados
+                dinamicamente por meio da manipulação do DOM, criando
+                automaticamente os cards com nome, categoria, preço e imagens
+                responsivas.
+              </p>
+              <p>
+                O carrinho permite adicionar, remover e ajustar quantidades, com
+                cálculo automático de valores, contador de itens e modal de
+                confirmação de pedido, tudo em uma interface responsiva, com
+                estados de hover e foco e atenção à experiência do usuário.
+              </p>
+            </ProjectDescription.Description>
+          </ProjectDescription>
 
           <ProjectSummary
             projectType="Desafio"

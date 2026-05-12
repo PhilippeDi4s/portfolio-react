@@ -1,6 +1,7 @@
 import { ProjectPage } from "@/src/components/ProjectPage";
 import { ProjectCarousel } from "@/src/components/ProjectPage/carousel/ProjectCarousel";
 import { ProjectActions } from "@/src/components/ProjectPage/ProjectActions";
+import { ProjectDescription } from "@/src/components/ProjectPage/ProjectDescription";
 import { ProjectInfoCard } from "@/src/components/ProjectPage/ProjectInfoCard";
 import { ProjectInfoSection } from "@/src/components/ProjectPage/ProjectInfoSection";
 import { ProjectSummary } from "@/src/components/ProjectPage/ProjectSummary";
@@ -35,31 +36,39 @@ export default function Home() {
       projectTitle={projectTitle}
       left={
         <>
-          <p className="block leading-8 indent-2 md:hidden">
-            Dashboard interativo desenvolvido em Python, com uso de Pandas para
-            análise de dados e Streamlit para criação de uma interface
-            responsiva, incluindo filtros dinâmicos, KPIs e gráficos interativos
-            que facilitam a exploração dos dados salariais na área de dados.
-          </p>
+          <ProjectDescription>
+            <ProjectDescription.ShortDescription>
+              <p>
+                Dashboard interativo desenvolvido em Python, com uso de Pandas
+                para análise de dados e Streamlit para criação de uma interface
+                responsiva, incluindo filtros dinâmicos, KPIs e gráficos
+                interativos que facilitam a exploração dos dados salariais na
+                área de dados.
+              </p>
+            </ProjectDescription.ShortDescription>
 
-          <p className="hidden md:block leading-8 indent-2 md:indent-5">
-            Dashboard interativo de análise de salários na área de dados,
-            desenvolvido inteiramente em Python, utilizando Pandas para
-            carregamento, limpeza e filtragem do dataframe, Streamlit para
-            construção da interface e Plotly para visualizações interativas. O
-            projeto conta com filtros dinâmicos na barra lateral (ano,
-            senioridade, tipo de contrato e tamanho da empresa), permitindo
-            análises personalizadas em tempo real.
-          </p>
+            <ProjectDescription.Description>
+              <p>
+                Dashboard interativo de análise de salários na área de dados,
+                desenvolvido inteiramente em Python, utilizando Pandas para
+                carregamento, limpeza e filtragem do dataframe, Streamlit para
+                construção da interface e Plotly para visualizações interativas.
+                O projeto conta com filtros dinâmicos na barra lateral (ano,
+                senioridade, tipo de contrato e tamanho da empresa), permitindo
+                análises personalizadas em tempo real.
+              </p>
 
-          <p className="hidden md:block leading-8 indent-2 md:indent-5">
-            O dashboard apresenta métricas principais (KPIs), como salário
-            médio, salário máximo, total de registros e cargo mais frequente,
-            além de gráficos interativos (ranking de cargos, distribuição
-            salarial, proporção de trabalho remoto e mapa de salários por país).
-            A aplicação foi construída com layout responsivo, organização em
-            colunas e foco na exploração e interpretação dos dados.
-          </p>
+              <p>
+                O dashboard apresenta métricas principais (KPIs), como salário
+                médio, salário máximo, total de registros e cargo mais
+                frequente, além de gráficos interativos (ranking de cargos,
+                distribuição salarial, proporção de trabalho remoto e mapa de
+                salários por país). A aplicação foi construída com layout
+                responsivo, organização em colunas e foco na exploração e
+                interpretação dos dados.
+              </p>
+            </ProjectDescription.Description>
+          </ProjectDescription>
 
           <ProjectSummary
             projectType="Desafio"

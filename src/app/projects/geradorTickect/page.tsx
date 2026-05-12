@@ -1,6 +1,7 @@
 import { ProjectPage } from "@/src/components/ProjectPage";
 import { ProjectCarousel } from "@/src/components/ProjectPage/carousel/ProjectCarousel";
 import { ProjectActions } from "@/src/components/ProjectPage/ProjectActions";
+import { ProjectDescription } from "@/src/components/ProjectPage/ProjectDescription";
 import { ProjectInfoCard } from "@/src/components/ProjectPage/ProjectInfoCard";
 import { ProjectInfoSection } from "@/src/components/ProjectPage/ProjectInfoSection";
 import { ProjectSummary } from "@/src/components/ProjectPage/ProjectSummary";
@@ -35,39 +36,48 @@ export default function Home() {
       projectTitle={projectTitle}
       left={
         <>
-          <p className="block leading-8 indent-2 md:hidden">
-            Gerador de ingressos com formulário validado em JavaScript,
-            incluindo upload e preview de avatar, persistência de dados com
-            localStorage e geração dinâmica do ticket por meio da manipulação do
-            DOM, em uma interface responsiva e acessível.
-          </p>
+          <ProjectDescription>
+            <ProjectDescription.ShortDescription>
+              <p>
+                Gerador de ingressos com formulário validado em JavaScript,
+                incluindo upload e preview de avatar, persistência de dados com
+                localStorage e geração dinâmica do ticket por meio da
+                manipulação do DOM, em uma interface responsiva e acessível.
+              </p>
+            </ProjectDescription.ShortDescription>
 
-          <p className="hidden md:block leading-8 indent-2 md:indent-5">
-            Projeto de gerador de ingressos para conferência desenvolvido com
-            HTML, CSS e JavaScript, com foco em validação de formulários,
-            acessibilidade e manipulação do DOM. O sistema permite que o usuário
-            preencha seus dados pessoais, faça upload de um avatar e receba
-            feedback em tempo real durante a digitação, exibindo ou ocultando
-            mensagens de erro conforme a validação dos campos.
-          </p>
+            <ProjectDescription.Description>
+              <p>
+                Projeto de gerador de ingressos para conferência desenvolvido
+                com HTML, CSS e JavaScript, com foco em validação de
+                formulários, acessibilidade e manipulação do DOM. O sistema
+                permite que o usuário preencha seus dados pessoais, faça upload
+                de um avatar e receba feedback em tempo real durante a
+                digitação, exibindo ou ocultando mensagens de erro conforme a
+                validação dos campos.
+              </p>
 
-          <p className="hidden md:block leading-8 indent-2 md:indent-5">
-            Projeto de gerador de ingressos para conferência desenvolvido com
-            HTML, CSS e JavaScript, com foco em validação de formulários,
-            acessibilidade e manipulação do DOM. O sistema permite que o usuário
-            preencha seus dados pessoais, faça upload de um avatar e receba
-            feedback em tempo real durante a digitação, exibindo ou ocultando
-            mensagens de erro conforme a validação dos campos.
-          </p>
+              <p>
+                Projeto de gerador de ingressos para conferência desenvolvido
+                com HTML, CSS e JavaScript, com foco em validação de
+                formulários, acessibilidade e manipulação do DOM. O sistema
+                permite que o usuário preencha seus dados pessoais, faça upload
+                de um avatar e receba feedback em tempo real durante a
+                digitação, exibindo ou ocultando mensagens de erro conforme a
+                validação dos campos.
+              </p>
 
-          <p className="hidden md:block leading-8 indent-2 md:indent-5">
-            Projeto de gerador de ingressos para conferência desenvolvido com
-            HTML, CSS e JavaScript, com foco em validação de formulários,
-            acessibilidade e manipulação do DOM. O sistema permite que o usuário
-            preencha seus dados pessoais, faça upload de um avatar e receba
-            feedback em tempo real durante a digitação, exibindo ou ocultando
-            mensagens de erro conforme a validação dos campos.
-          </p>
+              <p>
+                Projeto de gerador de ingressos para conferência desenvolvido
+                com HTML, CSS e JavaScript, com foco em validação de
+                formulários, acessibilidade e manipulação do DOM. O sistema
+                permite que o usuário preencha seus dados pessoais, faça upload
+                de um avatar e receba feedback em tempo real durante a
+                digitação, exibindo ou ocultando mensagens de erro conforme a
+                validação dos campos.
+              </p>
+            </ProjectDescription.Description>
+          </ProjectDescription>
 
           <ProjectSummary
             projectType="Desafio"

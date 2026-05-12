@@ -4,7 +4,7 @@ import Link from "next/link";
 type BlueLinkProps = {
   href: string;
   children: React.ReactNode;
-};
+}& React.AnchorHTMLAttributes<HTMLAnchorElement> ;
 
 export function BlueLink({ href, children, ...props }: BlueLinkProps) {
   return (
@@ -23,8 +23,8 @@ export function BlueLink({ href, children, ...props }: BlueLinkProps) {
         "hover:text-(--secondary-color)",
         "hover:border-b-(--secondary-color)",
         "md:gap-3",
-        { ...props },
       )}
+      { ...props }
     >
       {children}
     </Link>

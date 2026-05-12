@@ -1,6 +1,7 @@
 import { ProjectPage } from "@/src/components/ProjectPage";
 import { ProjectCarousel } from "@/src/components/ProjectPage/carousel/ProjectCarousel";
 import { ProjectActions } from "@/src/components/ProjectPage/ProjectActions";
+import { ProjectDescription } from "@/src/components/ProjectPage/ProjectDescription";
 import { ProjectInfoCard } from "@/src/components/ProjectPage/ProjectInfoCard";
 import { ProjectInfoSection } from "@/src/components/ProjectPage/ProjectInfoSection";
 import { ProjectSummary } from "@/src/components/ProjectPage/ProjectSummary";
@@ -42,37 +43,43 @@ export default function Home() {
       projectTitle={projectTitle}
       left={
         <>
-          <p className="block leading-8 indent-2 md:hidden">
-            Aplicação web SPA de produtividade baseada na técnica Pomodoro. O
-            usuário pode configurar os tempos de foco e descanso, registrar a
-            tarefa atual e acompanhar o histórico dos ciclos realizados. O
-            cronômetro roda em segundo plano com Web Worker, mantendo a contagem
-            correta mesmo com a aba minimizada.
-          </p>
-          <p className="block leading-8 indent-2 md:hidden">
-            O projeto utiliza React, Context API e useReducer para gerenciamento
-            global de estado, React Router DOM para navegação entre páginas e
-            React Toastify para notificações visuais. Os dados são salvos no
-            Local Storage e a interface permite personalização de temas para
-            melhorar a experiência do usuário.
-          </p>
+          <ProjectDescription>
+            <ProjectDescription.ShortDescription>
+              <p>
+                Aplicação web SPA de produtividade baseada na técnica Pomodoro.
+                O usuário pode configurar os tempos de foco e descanso,
+                registrar a tarefa atual e acompanhar o histórico dos ciclos
+                realizados. O cronômetro roda em segundo plano com Web Worker,
+                mantendo a contagem correta mesmo com a aba minimizada.
+              </p>
+              <p>
+                O projeto utiliza React, Context API e useReducer para
+                gerenciamento global de estado, React Router DOM para navegação
+                entre páginas e React Toastify para notificações visuais. Os
+                dados são salvos no Local Storage e a interface permite
+                personalização de temas para melhorar a experiência do usuário.
+              </p>
+            </ProjectDescription.ShortDescription>
 
-          <p className="hidden md:block leading-8 indent-2 md:indent-5">
-            O gerenciamento de estado global é realizado com Context API e
-            useReducer, estruturando as regras de negócio de forma escalável. O
-            cronômetro funciona em segundo plano por meio de um Web Worker,
-            mantendo a contagem precisa mesmo com a aba minimizada e sem
-            bloquear a thread principal da aplicação.
-          </p>
+            <ProjectDescription.Description>
+              <p>
+                O gerenciamento de estado global é realizado com Context API e
+                useReducer, estruturando as regras de negócio de forma
+                escalável. O cronômetro funciona em segundo plano por meio de um
+                Web Worker, mantendo a contagem precisa mesmo com a aba
+                minimizada e sem bloquear a thread principal da aplicação.
+              </p>
 
-          <p className="hidden md:block leading-8 indent-2 md:indent-5">
-            A aplicação utiliza React Toastify para notificações e feedbacks
-            visuais, além de alertas interativos. Os dados de tarefas e
-            configurações são persistidos no Local Storage, preservando o
-            histórico entre sessões. O sistema também inclui temas
-            personalizáveis e feedback sonoro ao final dos ciclos, reforçando a
-            experiência do usuário.
-          </p>
+              <p>
+                A aplicação utiliza React Toastify para notificações e feedbacks
+                visuais, além de alertas interativos. Os dados de tarefas e
+                configurações são persistidos no Local Storage, preservando o
+                histórico entre sessões. O sistema também inclui temas
+                personalizáveis e feedback sonoro ao final dos ciclos,
+                reforçando a experiência do usuário.
+              </p>
+            </ProjectDescription.Description>
+          </ProjectDescription>
 
           <ProjectSummary
             projectType="Projeto"
