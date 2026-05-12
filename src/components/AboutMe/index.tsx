@@ -1,6 +1,7 @@
-import { BlueLink } from "../../BlueLink";
-import { Heading } from "../../Heading";
-import { SplitLayout } from "../../layout/SplitLayout";
+import { BlueLink } from "../BlueLink";
+import { Heading } from "../Heading";
+import { SplitLayout } from "../layout/SplitLayout";
+
 
 export function AboutMe() {
   return (

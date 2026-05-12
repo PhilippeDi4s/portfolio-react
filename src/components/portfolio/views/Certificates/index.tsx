@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { PortfolioCard } from "../../PortfolioCard";
+import { PortfolioCard } from "../../cards/PortfolioCard";
 
 export function Certificates() {
   return (

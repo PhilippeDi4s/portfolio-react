@@ -1,17 +1,17 @@
 import clsx from "clsx";
 import type { IconType } from "react-icons";
 
-type TechCardProps = {
+type StackCardProps = {
   icon: IconType;
   iconColor?: string;
   text: string;
 };
 
-export function TechCard({
+export function StackCard({
   icon: Icon,
   iconColor = "white",
   text,
-}: TechCardProps) {
+}: StackCardProps) {
   return (
     <article
       className={clsx(

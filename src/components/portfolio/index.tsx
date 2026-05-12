@@ -1,14 +1,17 @@
 "use client";
 import { useState } from "react";
-import { ContentSwitcher } from "../ContentSwitcher";
-import { SwitchButton } from "../SwitchButton";
-import { Heading } from "../../Heading";
-import { Projects } from "../../sections/Projects";
-import { Certificates } from "../../sections/Certificates";
-import { Stack } from "../../sections/Stack";
-import { AwardIcon, BookOpenIcon, CodeIcon } from "lucide-react";
-import { Section } from "../../Section";
-
+import { ContentSwitcher } from "./switcher/ContentSwitcher";
+import {
+  AwardIcon,
+  BookOpenIcon,
+  CodeIcon
+} from "lucide-react";
+import { SwitchButton } from "./switcher/SwitchButton";
+import { Certificates } from "./views/Certificates";
+import { Projects } from "./views/Projects";
+import { Stack } from "./views/Stack";
+import { Section } from "../Section";
+import { Heading } from "../Heading";
 type Portfolio = "projetos" | "certificados" | "stack";
 
 export function PortfolioSwitcher() {

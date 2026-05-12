@@ -1,11 +1,10 @@
 import { ArrowUpIcon } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-
-import { SplitLayout } from "../../layout/SplitLayout";
-import { IconLink } from "../../IconLink";
-import { GITHUB, LINKEDIN } from "../../../lib/const";
 import Image from "next/image";
 import clsx from "clsx";
+import { LINKEDIN, GITHUB } from "@/src/lib/const";
+import { IconLink } from "../IconLink";
+import { SplitLayout } from "../layout/SplitLayout";
 
 export function Hero() {
   return (

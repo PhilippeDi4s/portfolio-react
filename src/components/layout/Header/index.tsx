@@ -1,6 +1,7 @@
 "use client";
 import clsx from "clsx";
 import { MenuIcon } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 export function Header() {
@@ -28,12 +29,12 @@ export function Header() {
         "lg:p-8",
       )}
     >
-      <a
-        href="#inicio"
+      <Link
+        href="/#inicio"
         className={`font-title uppercase text-[2rem] md:text-[3rem] lg:text-5xl ${linkStyles}`}
       >
         philippe dias
-      </a>
+      </Link>
 
       <button
         className={clsx(
@@ -77,24 +78,24 @@ export function Header() {
       >
         <ul className="flex flex-col items-end gap-6 lg:flex-row lg:gap-12">
           <li className="">
-            <a href="#inicio" className={linkStyles}>
+            <Link href="/#inicio" className={linkStyles}>
               Início
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#portfolio" className={linkStyles}>
+            <Link href="/#portfolio" className={linkStyles}>
               Portfólio
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#sobreMim" className={linkStyles}>
+            <Link href="/#sobreMim" className={linkStyles}>
               Sobre mim
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contato" className={linkStyles}>
+            <Link href="/#contato" className={linkStyles}>
               Contato
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

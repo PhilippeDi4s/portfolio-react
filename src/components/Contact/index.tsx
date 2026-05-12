@@ -1,19 +1,15 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Heading } from "../../Heading";
-import { SplitLayout } from "../../layout/SplitLayout";
-import { IconLink } from "../../IconLink";
-import { GITHUB, LINKEDIN, RESUME } from "../../../lib/const";
-import { ContactForm } from "../../ContactForm";
 import Link from "next/link";
+import { RESUME, LINKEDIN, GITHUB } from "@/src/lib/const";
+import { ContactForm } from "../ContactForm";
+import { IconLink } from "../IconLink";
+import { SplitLayout } from "../layout/SplitLayout";
+import { Heading } from "../Heading";
 
 export function Contact() {
   return (
-    <SplitLayout
-      sectionId="contato"
-      contentSize={[0.8, 1]}
-      alignComponents="start"
-    >
-      <SplitLayout.Left>
+    <SplitLayout sectionId="contato" alignComponents="start">
+      <SplitLayout.Left flex={0.8}>
         <Heading textPosition="left">Vamos Nos Conectar!</Heading>
         <p>
           Diga olá para{" "}
@@ -50,5 +46,3 @@ export function Contact() {
     </SplitLayout>
   );
 }
-
-// rightContent={<ContactForm/>}

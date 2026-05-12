@@ -88,7 +88,10 @@ export function ContactForm() {
           ></textarea>
         </div>
       </div>
-      <ActionGradient text="Enviar" icon={<SendIcon />} type="submit" />
+      <ActionGradient as="button" type="submit">
+        <SendIcon />
+        Enviar
+      </ActionGradient>
     </form>
   );
 }

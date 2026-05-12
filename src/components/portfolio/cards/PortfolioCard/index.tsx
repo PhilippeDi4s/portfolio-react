@@ -68,7 +68,11 @@ export function PortfolioCard({
             width={600}
             height={600}
             src={cardImgUrl}
-            alt={cardType === "project" ? `Imagem do projeto ${cardTitle}` : cardImgAlt}
+            alt={
+              cardType === "project"
+                ? `Imagem do projeto ${cardTitle}`
+                : cardImgAlt
+            }
             className={clsx(
               "w-full",
               "object-cover",
@@ -95,7 +99,7 @@ export function PortfolioCard({
           {cardTitle}
         </h3>
       )}
-      {children}
+      <div className="flex flex-col gap-5 [&>p]:flex-1">{children}</div>
     </article>
   );
 }

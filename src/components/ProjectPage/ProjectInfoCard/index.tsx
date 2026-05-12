@@ -1,10 +1,11 @@
 import clsx from "clsx";
+import { CodeIcon } from "lucide-react";
 
 type ProjectInfoCardProps = {
   children: React.ReactNode;
 };
 
-export function ProjectInfoCard({ children }: ProjectInfoCardProps) {
+export function   ProjectInfoCard({ children }: ProjectInfoCardProps) {
   return (
     <span
       className={clsx(
@@ -19,11 +20,14 @@ export function ProjectInfoCard({ children }: ProjectInfoCardProps) {
         "border",
         "border-white/20",
         "rounded",
+        "cursor-default",
+        "transition",
+        "hover:text-(--secondary-color)",
         "md:px-3",
         "md:py-6",
       )}
     >
-      {children}
+      <CodeIcon/> {children}
     </span>
   );
 }

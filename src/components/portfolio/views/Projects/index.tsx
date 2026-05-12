@@ -1,5 +1,5 @@
-import { PortfolioCard } from "../../PortfolioCard";
-import { CardActions } from "../../CardActions";
+import { CardActions } from "@/src/components/CardActions";
+import { PortfolioCard } from "../../cards/PortfolioCard";
 
 export function Projects() {
   return (
@@ -17,7 +17,10 @@ export function Projects() {
               personalizáveis, notificações com React Toastify e contagem
               precisa via Web Worker.
             </p>
-            <CardActions detailsLink="" liveDemoLink="" />
+            <CardActions
+              detailsLink="/projects/chronosPomodoro"
+              liveDemoLink=""
+            />
           </>
         }
       </PortfolioCard>
