@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { RESUME, LINKEDIN, GITHUB } from "@/src/lib/const";
-import { ContactForm } from "../ContactForm";
+import { ContactForm } from "./ContactForm";
 import { IconLink } from "../IconLink";
 import { SplitLayout } from "../layout/SplitLayout";
 import { Heading } from "../Heading";

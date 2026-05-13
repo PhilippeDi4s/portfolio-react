@@ -1,16 +1,46 @@
+'use client'
+import { useEffect, useRef, useState } from "react";
+import styles from "./style.module.css";
+
 type SectionProps = {
   children: React.ReactNode;
   className?: string;
   id?: string;
 };
 
-export function Section({
-  children,
-  className = "",
-  id
-}: SectionProps) {
+export function Section({ children, className = "", id }: SectionProps) {
+  const ref = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // anima só uma vez
+        }
+      },
+      { threshold: 0.15 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id={id} className={`w-full max-w-400 mx-auto p-4 md:px-16 ${className} lg:px-25 `}>
+    <section
+      ref={ref}
+      id={id}
+      className={`
+        w-full max-w-400 mx-auto p-4 md:px-16 lg:px-25
+        ${styles.section}
+        ${inView ? styles.visible : ""}
+        ${className}
+      `}
+    >
       {children}
     </section>
   );

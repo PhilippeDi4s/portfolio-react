@@ -1,11 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ContentSwitcher } from "./switcher/ContentSwitcher";
-import {
-  AwardIcon,
-  BookOpenIcon,
-  CodeIcon
-} from "lucide-react";
+import { AwardIcon, BookOpenIcon, CodeIcon } from "lucide-react";
 import { SwitchButton } from "./switcher/SwitchButton";
 import { Certificates } from "./views/Certificates";
 import { Projects } from "./views/Projects";
@@ -13,6 +9,7 @@ import { Stack } from "./views/Stack";
 import { Section } from "../Section";
 import { Heading } from "../Heading";
 type Portfolio = "projetos" | "certificados" | "stack";
+import styles from "./style.module.css";
 
 export function PortfolioSwitcher() {
   const [isActive, setIsActive] = useState<Portfolio>("projetos");
@@ -48,9 +45,11 @@ export function PortfolioSwitcher() {
           Stack <BookOpenIcon />
         </SwitchButton>
       </ContentSwitcher>
-      {isActive === "projetos" && <Projects />}
-      {isActive === "certificados" && <Certificates />}
-      {isActive === "stack" && <Stack />}
+      <div key={isActive} className={styles.content}>
+        {isActive === "projetos" && <Projects />}
+        {isActive === "certificados" && <Certificates />}
+        {isActive === "stack" && <Stack />}
+      </div>
     </Section>
   );
 }

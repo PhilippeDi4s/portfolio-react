@@ -5,6 +5,7 @@ import { Container } from "../components/layout/Container";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import { ProjectsProvider } from "../context/ProjectsProvider";
+import { ToastifyContainer } from "../components/ToastifyContainer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Header />
         <ProjectsProvider>
           <Container>{children}</Container>
+          <ToastifyContainer />
         </ProjectsProvider>
         <Footer />
       </body>
