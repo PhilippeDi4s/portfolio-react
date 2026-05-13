@@ -13,7 +13,7 @@ type ProjectPageProps = {
 export function ProjectPage({ projectTitle, left, right }: ProjectPageProps) {
   return (
     <>
-      <Section className="flex items-center gap-4 mb-8">
+      <Section className="flex items-center gap-4 mb-8 mt-6 md:mt-12">
         <TransparentLink href="/#portfolio">
           <ArrowLeftIcon />
           Voltar

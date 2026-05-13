@@ -8,10 +8,10 @@ import { Heading } from "../Heading";
 
 export function Contact() {
   return (
-    <SplitLayout sectionId="contato" alignComponents="start">
-      <SplitLayout.Left flex={0.8}>
-        <Heading textPosition="left">Vamos Nos Conectar!</Heading>
-        <p>
+    <SplitLayout sectionId="contato" alignComponents="start" className="mb-6 md:mb-12 lg:mb-23 xl:mb-30">
+      <SplitLayout.Left flex={0.8} className="gap-2">
+        <Heading className="lg:whitespace-nowrap" textPosition="left">Vamos Nos Conectar!</Heading>
+        <p className="mb-4">
           Diga olá para{" "}
           <span className="bold transition text-(--secondary-color) border-b hover:text-(--blue-200)">
             lisboa.philippes@gmail.com
@@ -26,15 +26,15 @@ export function Contact() {
             currículo
           </Link>
         </p>
-        <nav className="flex gap-4">
+        <nav className="flex gap-4 md:gap-8">
           <IconLink
             href={LINKEDIN}
-            icon={<FaLinkedin size={48} />}
+            icon={<FaLinkedin/>}
             type="minimal"
           />
           <IconLink
             href={GITHUB}
-            icon={<FaGithub size={48} />}
+            icon={<FaGithub/>}
             type="minimal"
           />
         </nav>

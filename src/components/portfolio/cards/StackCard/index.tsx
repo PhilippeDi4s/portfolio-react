@@ -39,7 +39,7 @@ export function StackCard({
         className={clsx(
           "text-[3.75rem]",
           "transition",
-          "duration-500",
+          "duration-300",
           "group-hover:rotate-35",
           "md:text-[clamp(4rem,50vw,5rem)]",
         )}

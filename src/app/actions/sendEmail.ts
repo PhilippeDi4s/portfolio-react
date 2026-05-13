@@ -17,7 +17,7 @@ export async function sendEmail(data: ContactFormFields) {
       from: "portfolio@diasphilippe.dev.br",
       to: "lisboa.philippes@gmail.com",
       subject: data.subject,
-      html: data.subject,
+      html: data.message,
     });
 
     if (error) {

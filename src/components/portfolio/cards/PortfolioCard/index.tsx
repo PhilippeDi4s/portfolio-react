@@ -38,7 +38,7 @@ export function PortfolioCard({
   const cardImageType = {
     certificate: "h-auto",
     project:
-      "w-[clamp(10rem,100vw,25rem)] md:h-[33rem] lg:h-[38rem] xl:h-[28rem]",
+      "h-[clamp(10rem,100vw,25rem)] md:h-[33rem] lg:h-[38rem] xl:h-[28rem]",
   };
   return (
     <article

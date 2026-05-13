@@ -8,7 +8,7 @@ import { SplitLayout } from "../layout/SplitLayout";
 
 export function Hero() {
   return (
-    <SplitLayout sectionId="inicio" alignComponents="start">
+    <SplitLayout sectionId="inicio" alignComponents="start" className="mt-6 md:mt-12 lg:mt-23 xl:mt-30">
       <SplitLayout.Left>
         <h1 className="text-[3.5rem]/15  uppercase md:text-[6.3rem]/25 lg:text-[6.3rem]/25">
           Olá, Eu Sou <br />

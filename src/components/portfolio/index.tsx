@@ -22,7 +22,9 @@ export function PortfolioSwitcher() {
 
   return (
     <Section className="flex flex-col gap-6" id="portfolio">
-      <Heading>{title[isActive]}</Heading>
+      <Heading key={`title-${isActive}`} className={styles.content}>
+        {title[isActive]}
+      </Heading>{" "}
       <ContentSwitcher>
         <SwitchButton
           isActive={isActive === "projetos"}

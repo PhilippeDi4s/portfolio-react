@@ -1,4 +1,5 @@
 import { Section } from "../../Section";
+import { twMerge } from "tailwind-merge";
 
 type ComponentsPosition = "center" | "start" | "end";
 
@@ -7,6 +8,7 @@ type SplitLayoutProps = {
   children: React.ReactNode;
   alignComponents?: ComponentsPosition;
   alignComponentsDesktop?: ComponentsPosition;
+  className?: string;
 };
 
 const alignmentClasses = {
@@ -26,21 +28,25 @@ function SplitLayout({
   children,
   alignComponents = "center",
   alignComponentsDesktop = "start",
+  className = "",
 }: SplitLayoutProps) {
   return (
     <Section
       id={sectionId}
-      className={`
-        w-full
-        flex
-        flex-col
-        gap-8
-        ${alignmentClasses[alignComponents]}
-        md:gap-12
-        xl:flex-row
-        xl:justify-between
-        ${responsiveAlignmentClasses[alignComponentsDesktop]}
-      `}
+      className={twMerge(
+        `
+      w-full
+      flex
+      flex-col
+      gap-8
+      md:gap-12
+      xl:flex-row
+      xl:justify-between
+    `,
+        className,
+        alignmentClasses[alignComponents],
+        responsiveAlignmentClasses[alignComponentsDesktop],
+      )}
     >
       {children}
     </Section>
@@ -57,7 +63,10 @@ function Left({
   flex?: number;
 }) {
   return (
-    <div className={`w-full flex flex-col gap-6 ${className}`} style={{ flex }}>
+    <div
+      className={twMerge(`w-full flex flex-col gap-6 ${className}`)}
+      style={{ flex }}
+    >
       {children}
     </div>
   );
@@ -73,7 +82,10 @@ function Right({
   flex?: number;
 }) {
   return (
-    <div className={`w-full flex flex-col gap-6 ${className}`} style={{ flex }}>
+    <div
+      className={twMerge(`w-full flex flex-col gap-6 ${className}`)}
+      style={{ flex }}
+    >
       {children}
     </div>
   );
