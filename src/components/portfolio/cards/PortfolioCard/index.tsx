@@ -45,6 +45,7 @@ export function PortfolioCard({
       className={clsx(
         "flex",
         "flex-col",
+        "justify-between",
         "gap-6",
         "w-full",
         "max-w-255",

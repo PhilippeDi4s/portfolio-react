@@ -1,91 +1,29 @@
 import { CardActions } from "@/src/components/CardActions";
 import { PortfolioCard } from "../../cards/PortfolioCard";
+import { useProjectsContext } from "@/src/context/useProjectContext";
 
 export function Projects() {
+  const { projects } = useProjectsContext();
   return (
     <section className="flex flex-col items-center gap-10 xl:grid xl:grid-cols-2 xl:gap-12 xl:items-stretch">
-      <PortfolioCard
-        cardImgUrl={"/images/projects-images/chronos_pomodoro.png"}
-        cardTitle="Chronos Pomodoro"
-        cardType="project"
-      >
-        {
-          <>
-            <p>
-              Aplicação SPA de cronômetro Pomodoro feita com React e Vite, com
-              ciclos de foco/descanso, histórico de tarefas, temas
-              personalizáveis, notificações com React Toastify e contagem
-              precisa via Web Worker.
-            </p>
-            <CardActions
-              detailsLink="/projects/chronosPomodoro"
-              liveDemoLink="https://chronos-pomodoro-amber.vercel.app/"
-            />
-          </>
-        }
-      </PortfolioCard>
-
-      <PortfolioCard
-        cardImgUrl={"/images/projects-images/menu_cart.png"}
-        cardTitle="Menu com Carrinho"
-        cardType="project"
-      >
-        {
-          <>
-            <p>
-              Projeto de menu interativo com carrinho funcional, permitindo
-              adicionar, remover e ajustar itens, confirmar pedidos via modal e
-              navegar em uma interface responsiva e acessível.
-            </p>
-            <CardActions
-              detailsLink="/projects/menuCarrinho"
-              liveDemoLink="https://philippedi4s.github.io/product-list-with-cart/"
-            />
-          </>
-        }
-      </PortfolioCard>
-
-      <PortfolioCard
-        cardImgUrl={"/images/projects-images/tickect_generator.png"}
-        cardTitle="Gerador de Tickect"
-        cardType="project"
-      >
-        {
-          <>
-            <p>
-              Gerador de ingressos para conferência com formulário acessível e
-              responsivo, incluindo validações de campos, suporte a navegação
-              por teclado, feedback para leitores de tela e geração do ingresso
-              após o envio bem-sucedido.
-            </p>
-            <CardActions
-              detailsLink="/projects/geradorTickect"
-              liveDemoLink="https://philippedi4s.github.io/conference-ticket-generator/pages/form.html"
-            />
-          </>
-        }
-      </PortfolioCard>
-
-      <PortfolioCard
-        cardImgUrl={"/images/projects-images/dashboard_python.png"}
-        cardImgPosition="left"
-        cardTitle="Dashboard Interativo"
-        cardType="project"
-      >
-        {
-          <>
-            <p>
-              Dashboard interativo desenvolvido em Python a partir de dados
-              tratados, com foco em análise de dados, visualização clara e
-              layout responsivo.
-            </p>
-            <CardActions
-              detailsLink="/projects/dashboardInterativo"
-              liveDemoLink="https://dashboardinterativo-2025.streamlit.app/"
-            />
-          </>
-        }
-      </PortfolioCard>
+      {projects.map((project) => (
+        <PortfolioCard
+          key={project.title}
+          cardImgUrl={project.cardImageSrc}
+          cardType="project"
+          cardTitle={project.title}
+        >
+          {
+            <>
+              <p>{project.cardDescription}</p>
+              <CardActions
+                liveDemoLink={project.liveDemoLink}
+                detailsLink={project.detailsLink}
+              />
+            </>
+          }
+        </PortfolioCard>
+      ))}
     </section>
   );
 }

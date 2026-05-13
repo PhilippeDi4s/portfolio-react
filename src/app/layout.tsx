@@ -4,6 +4,7 @@ import "./globals.css";
 import { Container } from "../components/layout/Container";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
+import { ProjectsProvider } from "../context/ProjectsProvider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -36,7 +37,9 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${manrope.variable} ${bebasNeue.variable}`}>
         <Header />
-        <Container>{children}</Container>
+        <ProjectsProvider>
+          <Container>{children}</Container>
+        </ProjectsProvider>
         <Footer />
       </body>
     </html>
