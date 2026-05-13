@@ -23,7 +23,7 @@ export function ProjectPage({ projectTitle, left, right }: ProjectPageProps) {
           <span className="brightness-50">Projetos {">"}</span> {projectTitle}
         </span>
       </Section>
-      <SplitLayout>
+      <SplitLayout className="mb-6 md:mb-12">
         <SplitLayout.Left>
           <Heading textPosition="left">{projectTitle}</Heading>
           {left}
