@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { ProjectPage } from "@/src/components/ProjectPage";
 import { ProjectCarousel } from "@/src/components/ProjectPage/carousel/ProjectCarousel";
 import { ProjectActions } from "@/src/components/ProjectPage/ProjectActions";
@@ -23,7 +23,7 @@ export default function ProjectDetails({
   //TODO:CRIAR PÁGINA PARA REDIRECIONAR USUÁRIO QUANDO NÃO ACHAR A PÁGINA
   if (!project) return <p>Projeto não encontrado</p>;
 
-const technologies = project.techUsed;
+  const technologies = project.techUsed;
 
   return (
     <ProjectPage
@@ -50,7 +50,7 @@ const technologies = project.techUsed;
             technologiesCount={technologies.length}
           />
 
-          <ProjectInfo as="div" technologies={technologies}/>
+          <ProjectInfo as="div" technologies={technologies} />
         </>
       }
       right={
@@ -61,7 +61,7 @@ const technologies = project.techUsed;
             liveDemoUrl={project.liveDemoLink}
           />
 
-          <ProjectInfo as="section" technologies={technologies}/>
+          <ProjectInfo as="section" technologies={technologies} />
         </>
       }
     />

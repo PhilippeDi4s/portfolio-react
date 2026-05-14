@@ -9,7 +9,7 @@ export function Projects() {
       {projects.map((project) => (
         <PortfolioCard
           key={project.title}
-          cardImgUrl={project.cardImageSrc}
+          cardImgUrl={project.imagesCarousel[0].src}
           cardType="project"
           cardTitle={project.title}
         >

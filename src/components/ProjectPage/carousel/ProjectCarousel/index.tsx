@@ -12,6 +12,7 @@ import Image from "next/image";
 type CarouselImage = {
   src: string;
   alt: string;
+  imagePosition: string
 };
 
 type PropType = {
@@ -34,7 +35,7 @@ export function ProjectCarousel(props: PropType) {
         <div className={styles.embla__container}>
           {images.map((image, index) => (
             <div className={styles.embla__slide} key={index}>
-              <Image className={styles.embla__slide__img} src={image.src} alt={image.alt} width={500} height={500} />
+              <Image className={styles.embla__slide__img} style={{objectPosition: image.imagePosition}} src={image.src} alt={image.alt} width={500} height={500} />
             </div>
           ))}
         </div>

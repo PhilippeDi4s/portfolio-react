@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createContext } from "react";
 import { ProjectModel } from "../models/projectModel";
@@ -10,7 +10,6 @@ type ProjectsContextType = {
 export const projectsData: ProjectModel[] = [
   {
     title: "Chronos Pomodoro",
-    cardImageSrc: "/images/projects-images/chronos_pomodoro-1.png",
     cardDescription:
       "Aplicação SPA de cronômetro Pomodoro feita com React e Vite, com ciclos de foco/descanso, histórico de tarefas, temas personalizáveis, notificações com React Toastify e contagem precisa via Web Worker.",
     projectShortDescription: [
@@ -33,29 +32,52 @@ export const projectsData: ProjectModel[] = [
     projectType: "Projeto",
     imagesCarousel: [
       {
-        src: "/images/projects-images/chronos_pomodoro-1.png",
-        alt: "Imagem 1 do projeto",
+        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-1.png",
+        alt: "Tela inicial",
+        imagePosition: "top",
       },
       {
-        src: "/images/projects-images/chronos_pomodoro-2.png",
-        alt: "Imagem 2 do projeto",
+        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-2.png",
+        alt: "Terefa Iniciada",
+        imagePosition: "top",
       },
       {
-        src: "/images/projects-images/chronos_pomodoro-3.png",
-        alt: "Imagem 3 do projeto",
+        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-3.png",
+        alt: "Terefa concluída",
+        imagePosition: "top",
       },
       {
-        src: "/images/projects-images/chronos_pomodoro-4.png",
-        alt: "Imagem 4 do projeto",
+        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-4.png",
+        alt: "Histórico de tarefas do usuário",
+        imagePosition: "center",
+      },
+      {
+        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-5.png",
+        alt: "Modal para usuário confirmar ou negar a ação de apagar histórico",
+        imagePosition: "top",
+      },
+      {
+        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-6.png",
+        alt: "Página de configurações",
+        imagePosition: "top",
+      },
+      {
+        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-7.png",
+        alt: "Página explicando a aplicação",
+        imagePosition: "left",
+      },
+      {
+        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-8.png",
+        alt: "Tema claro",
+        imagePosition: "top",
       },
     ],
     gitRepositoryLink: "https://github.com/PhilippeDi4s/chronos-pomodoro",
     detailsLink: "/projects/chronosPomodoro",
-    liveDemoLink: "https://chronos-pomodoro-amber.vercel.app/",
+    liveDemoLink: "https://chronos.diasphilippe.dev.br/",
   },
   {
     title: "Menu com Carrinho",
-    cardImageSrc: "/images/projects-images/menu_cart.png",
     cardDescription:
       "Projeto de menu interativo com carrinho funcional, permitindo adicionar, remover e ajustar itens, confirmar pedidos via modal e navegar em uma interface responsiva e acessível.",
     projectShortDescription: [
@@ -70,8 +92,24 @@ export const projectsData: ProjectModel[] = [
     projectType: "Desafio",
     imagesCarousel: [
       {
-        src: "/images/projects-images/menu_cart.png",
-        alt: "Imagem do projeto",
+        src: "/images/projects-images/menu_cart/menu_cart-1.png",
+        alt: "Tela inicial",
+        imagePosition: "top",
+      },
+      {
+        src: "/images/projects-images/menu_cart/menu_cart-2.png",
+        alt: "Carrinho vazio",
+        imagePosition: "top",
+      },
+      {
+        src: "/images/projects-images/menu_cart/menu_cart-3.png",
+        alt: "Adicionando itens no carrinho",
+        imagePosition: "right",
+      },
+      {
+        src: "/images/projects-images/menu_cart/menu_cart-4.png",
+        alt: "Finalizando compra",
+        imagePosition: "center",
       },
     ],
     gitRepositoryLink: "https://github.com/PhilippeDi4s/product-list-with-cart",
@@ -80,7 +118,6 @@ export const projectsData: ProjectModel[] = [
   },
   {
     title: "Gerador de Ticket",
-    cardImageSrc: "/images/projects-images/ticket_generator.png",
     cardDescription:
       "Gerador de ingressos para conferência com formulário acessível e responsivo, incluindo validações de campos, suporte a navegação por teclado, feedback para leitores de tela e geração do ingresso após o envio bem-sucedido.",
     projectShortDescription: [
@@ -94,8 +131,29 @@ export const projectsData: ProjectModel[] = [
     projectType: "Desafio",
     imagesCarousel: [
       {
-        src: "/images/projects-images/ticket_generator.png",
-        alt: "Imagem do projeto",
+        src: "/images/projects-images/ticket_generator/ticket_generator-1.png",
+        alt: "Ticket gerado",
+        imagePosition: "top",
+      },
+      {
+        src: "/images/projects-images/ticket_generator/ticket_generator-2.png",
+        alt: "Ticket formulário",
+        imagePosition: "top",
+      },
+      {
+        src: "/images/projects-images/ticket_generator/ticket_generator-3.png",
+        alt: "Validações do formulário Ticket",
+        imagePosition: "left",
+      },
+      {
+        src: "/images/projects-images/ticket_generator/ticket_generator-4.png",
+        alt: "Fórmulario do Ticket preenchido",
+        imagePosition: "left",
+      },
+      {
+        src: "/images/projects-images/ticket_generator/ticket_generator-5.png",
+        alt: "Ticket gerado pelo form",
+        imagePosition: "center",
       },
     ],
     gitRepositoryLink:
@@ -106,7 +164,6 @@ export const projectsData: ProjectModel[] = [
   },
   {
     title: "Dashboard Interativo",
-    cardImageSrc: "/images/projects-images/dashboard_python.png",
     cardDescription:
       "Dashboard interativo desenvolvido em Python a partir de dados tratados, com foco em análise de dados, visualização clara e layout responsivo.",
     projectShortDescription: [
@@ -121,8 +178,34 @@ export const projectsData: ProjectModel[] = [
     projectType: "Projeto",
     imagesCarousel: [
       {
-        src: "/images/projects-images/dashboard_python.png",
-        alt: "Imagem do projeto",
+        src: "/images/projects-images/dashboard_python/dashboard_python-1.png",
+        alt: "Filtragem de dados em um side menu na esquerda e um resumo pricipais dados na direita",
+        imagePosition: "center",
+      },
+      {
+        src: "/images/projects-images/dashboard_python/dashboard_python-2.png",
+        alt: "Side menu com as opções de filtragem",
+        imagePosition: "top",
+      },
+      {
+        src: "/images/projects-images/dashboard_python/dashboard_python-3.png",
+        alt: "Resumo dos principais dados",
+        imagePosition: "left",
+      },
+      {
+        src: "/images/projects-images/dashboard_python/dashboard_python-4.png",
+        alt: "Gráfico de barras horizontais e um histograma",
+        imagePosition: "bottom",
+      },
+      {
+        src: "/images/projects-images/dashboard_python/dashboard_python-5.png",
+        alt: "Gráfico de rosca e um mapa coroplético",
+        imagePosition: "left",
+      },
+      {
+        src: "/images/projects-images/dashboard_python/dashboard_python-6.png",
+        alt: "Tabela contendo todos os dados",
+        imagePosition: "left",
       },
     ],
     gitRepositoryLink: "https://github.com/PhilippeDi4s/dashboard_interativo",
