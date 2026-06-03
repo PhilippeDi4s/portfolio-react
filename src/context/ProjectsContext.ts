@@ -136,7 +136,7 @@ export const projectsData: ProjectModel[] = [
     },
     gitRepositoryLink: "https://github.com/PhilippeDi4s/product-list-with-cart",
     detailsLink: "/projects/menuCarrinho",
-    liveDemoLink: "https://philippedi4s.github.io/product-list-with-cart/",
+    liveDemoLink: "https://desserts-shop.diasphilippe.dev.br/",
   },
   {
     title: "Gerador de Ticket",
@@ -192,7 +192,7 @@ export const projectsData: ProjectModel[] = [
       "https://github.com/PhilippeDi4s/conference-ticket-generator",
     detailsLink: "/projects/geradorTicket",
     liveDemoLink:
-      "https://philippedi4s.github.io/conference-ticket-generator/pages/form.html",
+      "https://conference-ticket.diasphilippe.dev.br/",
   },
   {
     title: "Dashboard Interativo",
