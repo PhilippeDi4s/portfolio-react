@@ -10,7 +10,9 @@ type CardActionsProps = {
 export function CardActions({ liveDemoLink, detailsLink }: CardActionsProps) {
   return (
     <div className="flex items-center justify-between">
-      <BlueLink href={liveDemoLink} target="_blank">Live Demo <ArrowUpIcon className="rotate-45"/></BlueLink>
+      <BlueLink href={liveDemoLink} target="_blank" className="">
+        Live Demo <ArrowUpIcon className="rotate-45" />
+      </BlueLink>
 
       <TransparentLink href={detailsLink}>
         Detalhes <ArrowRightIcon />

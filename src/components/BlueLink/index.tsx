@@ -4,9 +4,10 @@ import Link from "next/link";
 type BlueLinkProps = {
   href: string;
   children: React.ReactNode;
+  className?: string;
 }& React.AnchorHTMLAttributes<HTMLAnchorElement> ;
 
-export function BlueLink({ href, children, ...props }: BlueLinkProps) {
+export function BlueLink({ href, children, className, ...props }: BlueLinkProps) {
   return (
     <Link
       href={href}
@@ -18,11 +19,13 @@ export function BlueLink({ href, children, ...props }: BlueLinkProps) {
         "uppercase",
         "font-bold",
         "border-b",
+        "whitespace-nowrap",
         "transition",
         "duration-300",
         "hover:text-(--secondary-color)",
         "hover:border-b-(--secondary-color)",
         "md:gap-3",
+        className,
       )}
       { ...props }
     >

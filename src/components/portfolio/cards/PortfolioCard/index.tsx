@@ -100,7 +100,9 @@ export function PortfolioCard({
           {cardTitle}
         </h3>
       )}
-      <div className="flex flex-col gap-5 [&>p]:flex-1">{children}</div>
+      <div className="flex flex-col gap-5 flex-1 justify-between [&>p]:flex-1">
+        {children}
+      </div>
     </article>
   );
 }
