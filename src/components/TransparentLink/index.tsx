@@ -3,10 +3,16 @@ import Link from "next/link";
 
 type TransparentLinkProps = {
   href: string;
-  children: React.ReactNode
+  className?: string;
+  children: React.ReactNode;
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export function TransparentLink({ href, children, ...props}: TransparentLinkProps) {
+export function TransparentLink({
+  href,
+  className,
+  children,
+  ...props
+}: TransparentLinkProps) {
   return (
     <Link
       href={href}
@@ -29,6 +35,7 @@ export function TransparentLink({ href, children, ...props}: TransparentLinkProp
         "hover:text-white",
         "md:px-6",
         "md:py-3",
+        className,
       )}
       {...props}
     >

@@ -60,15 +60,17 @@ body::before {
   z-index: -1;
   background: linear-gradient(
     300deg,
+    #00020d,
+    #000629,
     #021a64,
     #00020d,
     #000629,
     #011140,
     #00020d,
-    #011140
+    #00020d
   );
   background-size: 180% 180%;
-  animation: gradient-animation 15s ease infinite;
+  animation: gradient-animation 12s ease infinite;
 }
 
 @keyframes gradient-animation {

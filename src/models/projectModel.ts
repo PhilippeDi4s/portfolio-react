@@ -1,4 +1,4 @@
-type Image = {
+type CarouselImage = {
   src: string;
   alt: string;
   imagePosition: "top" | "center" | "bottom" | "left" | "right";
@@ -12,7 +12,10 @@ export type ProjectModel = {
   techUsed: string[];
   projectSource: string;
   projectType: string;
-  imagesCarousel: Image[];
+  imagesCarousel: {
+    desktop: CarouselImage[];
+    mobile?: CarouselImage[];
+  };
   gitRepositoryLink: string;
   detailsLink: string;
   liveDemoLink: string;

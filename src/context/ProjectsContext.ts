@@ -30,48 +30,50 @@ export const projectsData: ProjectModel[] = [
     ],
     projectSource: "Curso Udemy",
     projectType: "Projeto",
-    imagesCarousel: [
-      {
-        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-1.png",
-        alt: "Tela inicial",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-2.png",
-        alt: "Terefa Iniciada",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-3.png",
-        alt: "Terefa concluída",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-4.png",
-        alt: "Histórico de tarefas do usuário",
-        imagePosition: "center",
-      },
-      {
-        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-5.png",
-        alt: "Modal para usuário confirmar ou negar a ação de apagar histórico",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-6.png",
-        alt: "Página de configurações",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-7.png",
-        alt: "Página explicando a aplicação",
-        imagePosition: "left",
-      },
-      {
-        src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-8.png",
-        alt: "Tema claro",
-        imagePosition: "top",
-      },
-    ],
+    imagesCarousel: {
+      desktop: [
+        {
+          src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-1_md.png",
+          alt: "Tela inicial",
+          imagePosition: "top",
+        },
+        {
+          src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-2_md.png",
+          alt: "Tarefa iniciada",
+          imagePosition: "top",
+        },
+        {
+          src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-3_md.png",
+          alt: "Tarefa concluída",
+          imagePosition: "top",
+        },
+        {
+          src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-4_md.png",
+          alt: "Histórico de tarefas do usuário",
+          imagePosition: "center",
+        },
+        {
+          src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-5_md.png",
+          alt: "Modal para usuário confirmar ou negar a ação de apagar histórico",
+          imagePosition: "top",
+        },
+        {
+          src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-6_md.png",
+          alt: "Página de configurações",
+          imagePosition: "top",
+        },
+        {
+          src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-7_md.png",
+          alt: "Página explicando a aplicação",
+          imagePosition: "left",
+        },
+        {
+          src: "/images/projects-images/chronos_pomodoro/chronos_pomodoro-8_md.png",
+          alt: "Tema claro",
+          imagePosition: "top",
+        },
+      ],
+    },
     gitRepositoryLink: "https://github.com/PhilippeDi4s/chronos-pomodoro",
     detailsLink: "/projects/chronosPomodoro",
     liveDemoLink: "https://chronos.diasphilippe.dev.br/",
@@ -90,28 +92,48 @@ export const projectsData: ProjectModel[] = [
     techUsed: ["HTML", "CSS", "JavaScript", "JSON"],
     projectSource: "FrontEndMentor",
     projectType: "Desafio",
-    imagesCarousel: [
-      {
-        src: "/images/projects-images/menu_cart/menu_cart-1.png",
-        alt: "Tela inicial",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/menu_cart/menu_cart-2.png",
-        alt: "Carrinho vazio",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/menu_cart/menu_cart-3.png",
-        alt: "Adicionando itens no carrinho",
-        imagePosition: "right",
-      },
-      {
-        src: "/images/projects-images/menu_cart/menu_cart-4.png",
-        alt: "Finalizando compra",
-        imagePosition: "center",
-      },
-    ],
+    imagesCarousel: {
+      desktop: [
+        {
+          src: "/images/projects-images/menu_cart/menu_cart-1.png",
+          alt: "Tela inicial",
+          imagePosition: "center",
+        },
+        {
+          src: "/images/projects-images/menu_cart/menu_cart-2.png",
+          alt: "Carrinho vazio",
+          imagePosition: "bottom",
+        },
+        {
+          src: "/images/projects-images/menu_cart/menu_cart-3.png",
+          alt: "Adicionando itens no carrinho",
+          imagePosition: "right",
+        },
+      ],
+
+      mobile: [
+        {
+          src: "/images/projects-images/menu_cart/menu_cart_sm-1.png",
+          alt: "Tela inicial",
+          imagePosition: "top",
+        },
+        {
+          src: "/images/projects-images/menu_cart/menu_cart_sm-2.png",
+          alt: "Carrinho vazio",
+          imagePosition: "bottom",
+        },
+        {
+          src: "/images/projects-images/menu_cart/menu_cart_sm-3.png",
+          alt: "Adicionando itens no carrinho",
+          imagePosition: "right",
+        },
+        {
+          src: "/images/projects-images/menu_cart/menu_cart_sm-4.png",
+          alt: "Finalizando compra",
+          imagePosition: "bottom",
+        },
+      ],
+    },
     gitRepositoryLink: "https://github.com/PhilippeDi4s/product-list-with-cart",
     detailsLink: "/projects/menuCarrinho",
     liveDemoLink: "https://philippedi4s.github.io/product-list-with-cart/",
@@ -129,33 +151,43 @@ export const projectsData: ProjectModel[] = [
     techUsed: ["HTML", "CSS", "JavaScript"],
     projectSource: "FrontEnd Mentor",
     projectType: "Desafio",
-    imagesCarousel: [
-      {
-        src: "/images/projects-images/ticket_generator/ticket_generator-1.png",
-        alt: "Ticket gerado",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/ticket_generator/ticket_generator-2.png",
-        alt: "Ticket formulário",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/ticket_generator/ticket_generator-3.png",
-        alt: "Validações do formulário Ticket",
-        imagePosition: "left",
-      },
-      {
-        src: "/images/projects-images/ticket_generator/ticket_generator-4.png",
-        alt: "Fórmulario do Ticket preenchido",
-        imagePosition: "left",
-      },
-      {
-        src: "/images/projects-images/ticket_generator/ticket_generator-5.png",
-        alt: "Ticket gerado pelo form",
-        imagePosition: "center",
-      },
-    ],
+    imagesCarousel: {
+      desktop: [
+        {
+          src: "/images/projects-images/ticket_generator/ticket_generator-1.png",
+          alt: "Formulário do ticket",
+          imagePosition: "top",
+        },
+        {
+          src: "/images/projects-images/ticket_generator/ticket_generator-2.png",
+          alt: "Upload de avatar",
+          imagePosition: "top",
+        },
+        {
+          src: "/images/projects-images/ticket_generator/ticket_generator-3.png",
+          alt: "Validações do formulário",
+          imagePosition: "top",
+        },
+      ],
+
+      mobile: [
+        {
+          src: "/images/projects-images/ticket_generator/ticket_generator_sm-1.png",
+          alt: "Formulário do ticket",
+          imagePosition: "top",
+        },
+        {
+          src: "/images/projects-images/ticket_generator/ticket_generator_sm-2.png",
+          alt: "Upload de avatar",
+          imagePosition: "bottom",
+        },
+        {
+          src: "/images/projects-images/ticket_generator/ticket_generator_sm-3.png",
+          alt: "Validações do formulário",
+          imagePosition: "top",
+        },
+      ],
+    },
     gitRepositoryLink:
       "https://github.com/PhilippeDi4s/conference-ticket-generator",
     detailsLink: "/projects/geradorTicket",
@@ -176,38 +208,63 @@ export const projectsData: ProjectModel[] = [
     techUsed: ["Python", "Pandas", "Streamlit", "Plotly"],
     projectSource: "Alura",
     projectType: "Projeto",
-    imagesCarousel: [
-      {
-        src: "/images/projects-images/dashboard_python/dashboard_python-1.png",
-        alt: "Filtragem de dados em um side menu na esquerda e um resumo pricipais dados na direita",
-        imagePosition: "center",
-      },
-      {
-        src: "/images/projects-images/dashboard_python/dashboard_python-2.png",
-        alt: "Side menu com as opções de filtragem",
-        imagePosition: "top",
-      },
-      {
-        src: "/images/projects-images/dashboard_python/dashboard_python-3.png",
-        alt: "Resumo dos principais dados",
-        imagePosition: "left",
-      },
-      {
-        src: "/images/projects-images/dashboard_python/dashboard_python-4.png",
-        alt: "Gráfico de barras horizontais e um histograma",
-        imagePosition: "bottom",
-      },
-      {
-        src: "/images/projects-images/dashboard_python/dashboard_python-5.png",
-        alt: "Gráfico de rosca e um mapa coroplético",
-        imagePosition: "left",
-      },
-      {
-        src: "/images/projects-images/dashboard_python/dashboard_python-6.png",
-        alt: "Tabela contendo todos os dados",
-        imagePosition: "left",
-      },
-    ],
+    imagesCarousel: {
+      desktop: [
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python-1.png",
+          alt: "",
+          imagePosition: "left",
+        },
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python-2.png",
+          alt: "",
+          imagePosition: "center",
+        },
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python-3.png",
+          alt: "",
+          imagePosition: "center",
+        },
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python-4.png",
+          alt: "",
+          imagePosition: "center",
+        },
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python-5.png",
+          alt: "",
+          imagePosition: "center",
+        },
+      ],
+
+      mobile: [
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python_sm-1.png",
+          alt: "",
+          imagePosition: "center",
+        },
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python_sm-2.png",
+          alt: "",
+          imagePosition: "center",
+        },
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python_sm-3.png",
+          alt: "",
+          imagePosition: "center",
+        },
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python_sm-4.png",
+          alt: "",
+          imagePosition: "center",
+        },
+        {
+          src: "/images/projects-images/dashboard_python/dashboard_python_sm-5.png",
+          alt: "",
+          imagePosition: "center",
+        },
+      ],
+    },
     gitRepositoryLink: "https://github.com/PhilippeDi4s/dashboard_interativo",
     detailsLink: "/projects/dashboardInterativo",
     liveDemoLink: "https://dashboardinterativo-2025.streamlit.app/",

@@ -8,23 +8,29 @@ import Fade from "embla-carousel-fade";
 import { DotButton, useDotButton } from "../ProjectCarouselDotButton";
 
 import Image from "next/image";
+import { useIsMobile } from "@/src/hook/useIsMobile";
+
 
 type CarouselImage = {
   src: string;
   alt: string;
-  imagePosition: string
+  imagePosition: "top" | "center" | "bottom" | "left" | "right";
 };
 
 type PropType = {
-  images: CarouselImage[];
+  images: {
+    desktop: CarouselImage[];
+    mobile?: CarouselImage[];
+  };
 };
 
-export function ProjectCarousel(props: PropType) {
-  const { images } = props;
+export function ProjectCarousel({ images }: PropType) {
+  const isMobile = useIsMobile();
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ duration: 30 }, [
-    Fade(),
-  ]);
+  const imagesToRender =
+    isMobile && images.mobile ? images.mobile : images.desktop;
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ duration: 30 }, [Fade()]);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
@@ -33,9 +39,18 @@ export function ProjectCarousel(props: PropType) {
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
-          {images.map((image, index) => (
+          {imagesToRender.map((image, index) => (
             <div className={styles.embla__slide} key={index}>
-              <Image className={styles.embla__slide__img} style={{objectPosition: image.imagePosition}} src={image.src} alt={image.alt} width={500} height={500} />
+              <Image
+                className={styles.embla__slide__img}
+                style={{
+                  objectPosition: image.imagePosition,
+                }}
+                src={image.src}
+                alt={image.alt}
+                width={500}
+                height={500}
+              />
             </div>
           ))}
         </div>

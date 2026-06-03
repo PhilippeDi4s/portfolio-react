@@ -10,7 +10,8 @@ export function Projects() {
       {projects.map((project) => (
         <PortfolioCard
           key={project.title}
-          cardImgUrl={project.imagesCarousel[0].src}
+          cardImgUrl={project.imagesCarousel.desktop[0].src}
+          cardImgPosition={project.imagesCarousel.desktop[0].imagePosition}
           cardType="project"
           cardTitle={project.title}
         >

@@ -1,16 +1,35 @@
 "use client";
+import { useActiveSection } from "@/src/hook/useActiveSection";
+import { RESUME } from "@/src/lib/const";
 import clsx from "clsx";
-import { MenuIcon } from "lucide-react";
+import { ArrowUpIcon, MenuIcon } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { TransparentLink } from "../../TransparentLink";
 
 export function Header() {
   const [menu, setMenu] = useState<boolean>(false);
-  const linkStyles = "transition hover:text-(--blue-200)";
+
+  const navLinks = [
+    { label: "Início", href: "/#inicio", id: "inicio" },
+    { label: "Portfólio", href: "/#portfolio", id: "portfolio" },
+    { label: "Sobre mim", href: "/#sobreMim", id: "sobreMim" },
+    { label: "Contato", href: "/#contato", id: "contato" },
+  ];
+
+  const sectionIds = navLinks.map((link) => link.id);
+  const activeSection = useActiveSection(sectionIds);
+
+  useEffect(() => {
+    if (activeSection) {
+      window.history.replaceState(null, "", `#${activeSection}`);
+    }
+  }, [activeSection]);
 
   function handleButtonMenu() {
     setMenu((prev) => !prev);
   }
+
   return (
     <header
       className={clsx(
@@ -23,17 +42,17 @@ export function Header() {
         "items-center",
         "p-4",
         "overflow-hidden",
-        "bg-[radial-gradient(circle,rgba(1,17,64,1)_0%,rgba(0,2,13,1)_100%)]",
+        "bg-[linear-gradient(60deg,#011140,#00020d,#000629,#00020d)]",
         "shadow-[-3px_13px_5px_-5px_rgba(7,19,69,0.77)]",
-        "z-10",
+        "z-50",
         "lg:p-8",
       )}
     >
       <Link
         href="/#inicio"
-        className={`font-title uppercase text-[2rem] md:text-[3rem] lg:text-5xl ${linkStyles}`}
+        className={`leading-0 font-title text-(--secondary-color)/85 transition hover:text-(--blue-200)  uppercase text-2xl md:text-3xl lg:text-5xl`}
       >
-        philippe dias
+        Philippe dias
       </Link>
 
       <button
@@ -43,7 +62,7 @@ export function Header() {
           "transition-transform",
           "duration-500",
         )}
-        style={{ color: `${menu ? "var(--blue-200" : "white"}` }}
+        style={{ color: `${menu ? "var(--blue-200)" : "white"}` }}
         onClick={handleButtonMenu}
       >
         <MenuIcon size={30} />
@@ -56,10 +75,9 @@ export function Header() {
           "right-0",
           "z-10",
           "top-18",
-          `${menu ? "translate-y-0 md:top-24" : "translate-y-[-150%]"}`,
+          menu ? "translate-y-0 md:top-24" : "translate-y-[-150%]",
           "transition",
           "duration-500",
-          "",
           "ease-in",
           "backdrop-blur-sm",
           "bg-[rgba(0,10,40,0.5)]",
@@ -77,28 +95,44 @@ export function Header() {
         )}
       >
         <ul className="flex flex-col items-end gap-6 lg:flex-row lg:gap-12">
-          <li className="">
-            <Link href="/#inicio" className={linkStyles}>
-              Início
-            </Link>
-          </li>
-          <li>
-            <Link href="/#portfolio" className={linkStyles}>
-              Portfólio
-            </Link>
-          </li>
-          <li>
-            <Link href="/#sobreMim" className={linkStyles}>
-              Sobre mim
-            </Link>
-          </li>
-          <li>
-            <Link href="/#contato" className={linkStyles}>
-              Contato
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+
+            return (
+              <li key={link.id}>
+                <Link
+                  href={link.href}
+                  className={clsx(
+                    "transition lg:text-[1.2rem] block",
+                    "hover:text-(--blue-200) text-white lg:pb-1 lg:border-b-2 lg:border-transparent",
+                    isActive
+                      ? "lg:text-(--blue-200) lg:border-b-(--blue-600)"
+                      : "lg:text-white/65",
+                  )}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
+
+          <li className="lg:hidden">
+            <Link
+              href={RESUME}
+              className="transition hover:text-(--blue-200) text-white"
+            >
+              Currículo
             </Link>
           </li>
         </ul>
       </nav>
+      <TransparentLink
+        href={RESUME}
+        className="p-2! rounded-xl text-base text-white/70"
+        target="_blank"
+      >
+        Currículo {<ArrowUpIcon className="rotate-45" />}
+      </TransparentLink>
     </header>
   );
 }
