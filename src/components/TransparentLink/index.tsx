@@ -20,6 +20,7 @@ export function TransparentLink({
         "flex",
         "gap-3",
         "justify-center",
+        "whitespace-nowrap",
         "items-center",
         "text-[rgb(199,199,199)]",
         "bg-[rgba(1761761760.06)]",

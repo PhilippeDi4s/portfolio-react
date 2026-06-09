@@ -128,7 +128,7 @@ export function Header() {
       </nav>
       <TransparentLink
         href={RESUME}
-        className="p-2! rounded-xl text-base text-white/70"
+        className="p-2! rounded-xl text-base text-white/70 hidden lg:flex"
         target="_blank"
       >
         Currículo {<ArrowUpIcon className="rotate-45" />}

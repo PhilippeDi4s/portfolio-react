@@ -28,7 +28,7 @@ export function ProjectPage({ projectTitle, left, right }: ProjectPageProps) {
           <Heading textPosition="left">{projectTitle}</Heading>
           {left}
         </SplitLayout.Left>
-        <SplitLayout.Right>{right}</SplitLayout.Right>
+        <SplitLayout.Right className="sticky top-35">{right}</SplitLayout.Right>
       </SplitLayout>
     </>
   );
