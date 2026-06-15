@@ -1,7 +1,7 @@
+import { RESUME } from "@/src/lib/const";
 import { BlueLink } from "../BlueLink";
 import { Heading } from "../Heading";
 import { SplitLayout } from "../layout/SplitLayout";
-
 
 export function AboutMe() {
   return (
@@ -14,35 +14,33 @@ export function AboutMe() {
         <Heading>Sobre mim</Heading>
       </SplitLayout.Left>
 
-      <SplitLayout.Right>
-        <h3 className="hidden md:block text-(--secondary-color) font-extrabold text-[1.5rem]">
-          Desenvolvedor Full-Stack com técnico em Desenvolvimento de Sistemas
+      <SplitLayout.Right className="gap-3 indent-2 lg:indent-4">
+        <h3 className="hidden md:block text-(--secondary-color) font-extrabold text-[1.5rem] indent-0">
+          Desenvolvedor Full-Stack
         </h3>
-        <p className="leading-10 md:hidden">
-          <strong>Sou estudante de Análise e Desenvolvimento de Sistemas e Técnico em
-          Desenvolvimento de Sistemas, com foco em desenvolvimento web front-end
-          e back-end. Tenho experiência com HTML, CSS, JavaScript, PHP, Python,
-          MySQL e GitHub</strong>, atuando na criação de soluções funcionais, bem
-          estruturadas e centradas na experiência do usuário. Busco uma
-          oportunidade no mercado desenvolvimento web para contribuir com
-          projetos reais e evoluir profissionalmente.
+        <p className="leading-8 hyphens-auto text-justify md:leading-10">
+          Sou estudante de Análise e Desenvolvimento de Sistemas e Técnico em
+          Desenvolvimento de Sistemas pela ETEC, com foco em desenvolvimento web
+          full stack.
         </p>
-        <p className="leading-10 hidden md:block">
-          <strong>Sou estudante de Análise e Desenvolvimento de Sistemas e Técnico em
-          Desenvolvimento de Sistemas pela ETEC , com foco em desenvolvimento
-          web front-end e back-end. Tenho experiência prática com HTML, CSS,
-          JavaScript, PHP, Python e MySQL</strong>, atuando desde a modelagem de bancos
-          de dados até a integração completa com interfaces funcionais e bem
-          estruturadas. Participei do desenvolvimento de soluções para clientes
-          reais, realizando levantamento de requisitos, versionamento com GitHub
-          e aplicação de boas práticas de desenvolvimento. Busco uma
-          oportunidade no mercado de desenvolvimento web onde eu possa
-          contribuir com projetos reais, evoluir tecnicamente e gerar impacto
-          por meio de soluções eficientes e centradas no usuário.
+        <p className="leading-8 hyphens-auto text-justify md:leading-10">
+          Tenho experiência com{" "}
+          <strong>
+            React, Next.js, TypeScript, JavaScript, PHP, Python, MySQL,
+            PostgreSQL e Drizzle ORM
+          </strong>
+          , desenvolvendo aplicações modernas desde o front-end até a integração
+          com bancos de dados e APIs. Também possuo experiência com Inteligência
+          Artificial utilizando LLMs e LangChain, além de versionamento com Git
+          e desenvolvimento de soluções para clientes reais.
         </p>
-        <nav className="flex gap-4 md:gap-8">
-          <BlueLink href="#">Mais Sobre Mim</BlueLink>
-          <BlueLink href="#">Meu currículo</BlueLink>
+        <p className="leading-8 hyphens-auto text-justify font-bold md:leading-10">
+          Busco oportunidades onde possa contribuir com projetos reais, evoluir
+          junto a um time e entregar soluções que gerem impacto.
+        </p>
+        <nav className="flex flex-wrap gap-6 justify-center mt-5 indent-0 md:gap-8 md:justify-start">
+          <BlueLink href="./about">Mais Sobre Mim</BlueLink>
+          <BlueLink href={RESUME}>Meu currículo</BlueLink>
         </nav>
       </SplitLayout.Right>
     </SplitLayout>
