@@ -23,7 +23,18 @@ export function Header() {
   useEffect(() => {
     if (activeSection) {
       window.history.replaceState(null, "", `#${activeSection}`);
+      console.log(activeSection);
     }
+
+    const handlePopState = () => {
+      if (activeSection) {
+        window.history.replaceState(null, "", `#${activeSection}`);
+        console.log(activeSection);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, [activeSection]);
 
   function handleButtonMenu() {

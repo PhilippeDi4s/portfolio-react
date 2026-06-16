@@ -20,7 +20,7 @@ export function Section({ children, className = "", id }: SectionProps) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          observer.disconnect(); // anima só uma vez
+          observer.disconnect(); 
         }
       },
       { threshold: 0.15 },

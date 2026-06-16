@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export function useActiveSection(sectionIds: string[]) {
   const [activeId, setActiveId] = useState<string>("");
+  const pathname = usePathname();
 
   useEffect(() => {
     const observerOptions = {
-      rootMargin: "-30% 0px -40% 0px",
+      rootMargin: "-10% 0px -70% 0px",
       threshold: 0,
     };
 
@@ -24,13 +26,8 @@ export function useActiveSection(sectionIds: string[]) {
       if (element) observer.observe(element);
     });
 
-    return () => {
-      sectionIds.forEach((id) => {
-        const element = document.getElementById(id);
-        if (element) observer.unobserve(element);
-      });
-    };
-  }, [sectionIds]);
+    return () => observer.disconnect();
+  }, [pathname, sectionIds]);
 
   return activeId;
 }
