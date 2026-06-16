@@ -1,5 +1,6 @@
-import { X } from "lucide-react";
+import { XIcon } from "lucide-react";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 
 type LightboxProps = {
   src: string | null;
@@ -9,7 +10,7 @@ type LightboxProps = {
 export function Lightbox({ src, onClose }: LightboxProps) {
   if (!src) return null;
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
       onClick={onClose}
@@ -18,7 +19,7 @@ export function Lightbox({ src, onClose }: LightboxProps) {
         className="absolute top-4 right-4 text-white cursor-pointer p-2 rounded-full hover:bg-white/10 transition"
         onClick={onClose}
       >
-        <X size={28} />
+        <XIcon size={28} />
       </button>
       <div onClick={(e) => e.stopPropagation()}>
         <Image
@@ -26,9 +27,10 @@ export function Lightbox({ src, onClose }: LightboxProps) {
           alt="Imagem ampliada"
           width={1200}
           height={1200}
-          className="rounded-xl object-contain"
+          className="max-w-220 max-h-220 rounded-xl object-contain xl:max-w-none xl:max-h-none"
         />
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

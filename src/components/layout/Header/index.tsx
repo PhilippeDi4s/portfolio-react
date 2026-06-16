@@ -84,7 +84,7 @@ export function Header() {
           "fixed",
           "top-0",
           "right-0",
-          "z-10",
+          "z-1",
           "top-18",
           menu ? "translate-y-0 md:top-24" : "translate-y-[-150%]",
           "transition",

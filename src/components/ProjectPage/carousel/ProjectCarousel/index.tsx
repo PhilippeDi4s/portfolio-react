@@ -9,7 +9,8 @@ import { DotButton, useDotButton } from "../ProjectCarouselDotButton";
 
 import Image from "next/image";
 import { useIsMobile } from "@/src/hook/useIsMobile";
-
+import { useLightbox } from "@/src/hook/useLightBox";
+import { Lightbox } from "@/src/components/LightBox";
 
 type CarouselImage = {
   src: string;
@@ -27,6 +28,8 @@ type PropType = {
 export function ProjectCarousel({ images }: PropType) {
   const isMobile = useIsMobile();
 
+  const lightBox = useLightbox();
+
   const imagesToRender =
     isMobile && images.mobile ? images.mobile : images.desktop;
 
@@ -36,39 +39,43 @@ export function ProjectCarousel({ images }: PropType) {
     useDotButton(emblaApi);
 
   return (
-    <div className={styles.embla}>
-      <div className={styles.embla__viewport} ref={emblaRef}>
-        <div className={styles.embla__container}>
-          {imagesToRender.map((image, index) => (
-            <div className={styles.embla__slide} key={index}>
-              <Image
-                className={styles.embla__slide__img}
-                style={{
-                  objectPosition: image.imagePosition,
-                }}
-                src={image.src}
-                alt={image.alt}
-                width={500}
-                height={500}
-              />
-            </div>
-          ))}
+    <>
+      <div className={styles.embla}>
+        <div className={styles.embla__viewport} ref={emblaRef}>
+          <div className={styles.embla__container}>
+            {imagesToRender.map((image, index) => (
+              <div className={styles.embla__slide} key={index}>
+                <Image
+                  className={styles.embla__slide__img}
+                  style={{
+                    objectPosition: image.imagePosition,
+                  }}
+                  src={image.src}
+                  alt={image.alt}
+                  width={500}
+                  height={500}
+                  onClick={() => lightBox.open(image.src)}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className={styles.embla__controls}>
-        <div className={styles.embla__dots}>
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={`${styles.embla__dot} ${
-                index === selectedIndex ? styles["embla__dot--selected"] : ""
-              }`}
-            />
-          ))}
+        <div className={styles.embla__controls}>
+          <div className={styles.embla__dots}>
+            {scrollSnaps.map((_, index) => (
+              <DotButton
+                key={index}
+                onClick={() => onDotButtonClick(index)}
+                className={`${styles.embla__dot} ${
+                  index === selectedIndex ? styles["embla__dot--selected"] : ""
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <Lightbox src={lightBox.src} onClose={lightBox.close} />
+    </>
   );
 }
