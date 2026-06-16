@@ -4,10 +4,17 @@ import { createPortal } from "react-dom";
 
 type LightboxProps = {
   src: string | null;
+  boxW?: number;
+  boxH?: number;
   onClose: () => void;
 };
 
-export function Lightbox({ src, onClose }: LightboxProps) {
+export function Lightbox({
+  src,
+  onClose,
+  boxW = 220,
+  boxH = 220,
+}: LightboxProps) {
   if (!src) return null;
 
   return createPortal(
@@ -27,7 +34,7 @@ export function Lightbox({ src, onClose }: LightboxProps) {
           alt="Imagem ampliada"
           width={1200}
           height={1200}
-          className="max-w-220 max-h-220 rounded-xl object-contain xl:max-w-none xl:max-h-none"
+          className={`max-w-${boxW} max-h-${boxH} rounded-xl object-contain xl:max-w-none xl:max-h-none`}
         />
       </div>
     </div>,

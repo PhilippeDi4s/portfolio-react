@@ -49,10 +49,10 @@ export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
               className="flex flex-col w-full min-w-0 shrink-0 grow-0 basis-full gap-2"
             >
               <Heading as="h2">{slide.title}</Heading>
-              <div className="flex justify-between gap-10 md:flex-col xl:flex-row">
+              <div className="flex flex-col justify-between gap-10 md:flex-col xl:flex-row">
                 <p className={paragraphStyle}>{slide.content}</p>
                 <Image
-                  className="hidden md:block rounded-xl cursor-zoom-in border border-white/40 md:mx-auto"
+                  className="rounded-xl cursor-zoom-in border border-white/40 md:mx-auto"
                   alt={slide.title}
                   src={slide.image}
                   width={700}
@@ -65,7 +65,7 @@ export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
         </div>
       </div>
       <CarouselTextDots emblaApi={emblaApi} slidesTitle={slidesTitle} />
-      <Lightbox src={lightbox.src} onClose={lightbox.close} />
+      <Lightbox boxW={80} boxH={80} src={lightbox.src} onClose={lightbox.close} />
     </>
   );
 }
