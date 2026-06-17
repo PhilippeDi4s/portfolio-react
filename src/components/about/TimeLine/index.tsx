@@ -6,7 +6,7 @@ type TimeLineProps = {
 
 export function TimeLine({ timelineItems }: TimeLineProps) {
   return (
-    <div className="relative mt-20 pb-16 xl:h-140 xl:pb-0">
+    <div className="relative my-20 pb-16 xl:h-140 xl:pb-0">
       <div className="absolute left-4 top-0 h-full w-px bg-white/30 xl:left-0 xl:top-1/2 xl:h-px xl:w-full xl:-translate-y-1/2" />
 
       <div className="grid grid-cols-1 gap-8 xl:h-full xl:grid-cols-8 xl:gap-0">

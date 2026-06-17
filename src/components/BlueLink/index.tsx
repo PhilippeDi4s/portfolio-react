@@ -5,11 +5,17 @@ type BlueLinkProps = {
   href: string;
   children: React.ReactNode;
   className?: string;
-}& React.AnchorHTMLAttributes<HTMLAnchorElement> ;
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export function BlueLink({ href, children, className, ...props }: BlueLinkProps) {
+export function BlueLink({
+  href,
+  children,
+  className,
+  ...props
+}: BlueLinkProps) {
   return (
     <Link
+      scroll={true}
       href={href}
       className={clsx(
         "inline-flex",
@@ -27,7 +33,7 @@ export function BlueLink({ href, children, className, ...props }: BlueLinkProps)
         "md:gap-3",
         className,
       )}
-      { ...props }
+      {...props}
     >
       {children}
     </Link>

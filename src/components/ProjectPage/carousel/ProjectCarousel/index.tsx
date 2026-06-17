@@ -75,7 +75,7 @@ export function ProjectCarousel({ images }: PropType) {
           </div>
         </div>
       </div>
-      <Lightbox src={lightBox.src} onClose={lightBox.close} />
+      <Lightbox src={lightBox.content} onClose={lightBox.close} />
     </>
   );
 }

@@ -39,7 +39,9 @@ export default function RootLayout({
       <body className={`${manrope.variable} ${bebasNeue.variable}`}>
         <Header />
         <ProjectsProvider>
-          <Container>{children}</Container>
+          <Container>
+            {children}
+          </Container>
           <ToastifyContainer />
         </ProjectsProvider>
         <Footer />

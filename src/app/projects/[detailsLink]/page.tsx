@@ -20,9 +20,7 @@ export default function ProjectDetails({
     (p) => p.detailsLink === `/projects/${detailsLink}`,
   );
 
-  //TODO:CRIAR PÁGINA PARA REDIRECIONAR USUÁRIO QUANDO NÃO ACHAR A PÁGINA
   //TODO: MUDAR TITLE DA PÁGINA, SEGUIDO O TEMPLETE "NOME PROJETO \ Philippe Dias"
-  //TODO:ADICIONAR FUNCIONALIDADE DE CLICAR E A IMAGEM OCUPAR O ESPAÇO INTEIRO DA TELA
 
   if (!project) return <p>Projeto não encontrado</p>;
 

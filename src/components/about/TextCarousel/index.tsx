@@ -68,7 +68,7 @@ export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
       <Lightbox
         boxW={80}
         boxH={80}
-        src={lightbox.src}
+        src={lightbox.content}
         onClose={lightbox.close}
       />
     </>
