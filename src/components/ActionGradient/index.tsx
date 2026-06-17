@@ -33,6 +33,7 @@ export function ActionGradient<T extends ElementType = "button">({
         "justify-center",
         "gap-1",
         "disabled:opacity-50",
+        "disabled:cursor-not-allowed",
         "hover:brightness-120",
         "md:gap-3",
         className,

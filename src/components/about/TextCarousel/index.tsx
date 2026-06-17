@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Fade from "embla-carousel-fade";
 import { Heading } from "../../Heading";
-import { useLightbox } from "@/src/hook/useLightBox";
+import { useOverlay } from "@/src/hook/useOverlay";
 import { Lightbox } from "../../LightBox";
 import { CarouselTextDots } from "../CarouselTextDots";
 
@@ -16,7 +16,7 @@ type TextCarouselProps = {
 export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [Fade()]);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const lightbox = useLightbox();
+  const lightbox = useOverlay();
 
   const slidesTitle: string[] = slides.map((slide) => slide.title);
 
@@ -65,7 +65,12 @@ export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
         </div>
       </div>
       <CarouselTextDots emblaApi={emblaApi} slidesTitle={slidesTitle} />
-      <Lightbox boxW={80} boxH={80} src={lightbox.src} onClose={lightbox.close} />
+      <Lightbox
+        boxW={80}
+        boxH={80}
+        src={lightbox.src}
+        onClose={lightbox.close}
+      />
     </>
   );
 }

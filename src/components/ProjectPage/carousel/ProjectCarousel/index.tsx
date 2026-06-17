@@ -9,7 +9,7 @@ import { DotButton, useDotButton } from "../ProjectCarouselDotButton";
 
 import Image from "next/image";
 import { useIsMobile } from "@/src/hook/useIsMobile";
-import { useLightbox } from "@/src/hook/useLightBox";
+import { useOverlay } from "@/src/hook/useOverlay";
 import { Lightbox } from "@/src/components/LightBox";
 
 type CarouselImage = {
@@ -28,7 +28,7 @@ type PropType = {
 export function ProjectCarousel({ images }: PropType) {
   const isMobile = useIsMobile();
 
-  const lightBox = useLightbox();
+  const lightBox = useOverlay();
 
   const imagesToRender =
     isMobile && images.mobile ? images.mobile : images.desktop;
