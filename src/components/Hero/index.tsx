@@ -1,6 +1,5 @@
 import { ArrowUpIcon } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import Image from "next/image";
 import clsx from "clsx";
 import { LINKEDIN, GITHUB } from "@/src/lib/const";
 import { IconLink } from "../IconLink";
@@ -21,7 +20,7 @@ export function Hero() {
         </h1>
         <p className="text-[clamp(1rem,6vw,1.5rem)]">
           Técnico em Desenvolvimento de sistemas, programador Full-Stack.
-          Atualmente, na faculdade, estou cursando Análise e Desenvolvimento de
+          Atualmente, na faculdade cursando Análise e Desenvolvimento de
           Sistemas.
         </p>
         <div className="flex items-center gap-4 md:gap-6">
