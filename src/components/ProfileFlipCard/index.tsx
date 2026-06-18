@@ -57,7 +57,7 @@ export function ProfileFlipCard() {
             )}
           >
             <Image
-              src="/images/profile-picture/profile-front.png"
+              src="/images/profile-picture/profile-front-1.png"
               alt="Foto de perfil"
               fill
               className="object-cover object-top"
