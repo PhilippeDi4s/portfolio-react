@@ -26,10 +26,7 @@ export function ContactModal({
         <strong>é automaticamente descartado após 24 horas.</strong> Não
         compartilhamos essa informação com terceiros, exceto os serviços
         técnicos necessários para o funcionamento do formulário (Upstash e
-        Resend). Para mais detalhes, consulte nossa{" "}
-        <BlueLink href="/" className="normal-case!">
-          Política de Privacidade
-        </BlueLink>
+        Resend).
       </p>
       <div className="flex flex-wrap gap-5 justify-center items-center mt-8 md:gap-10 lg:gap-15">
         <Button variant="primary" size="lg" onClick={onConfirm}>
