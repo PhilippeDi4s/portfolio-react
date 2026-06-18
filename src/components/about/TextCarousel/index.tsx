@@ -1,3 +1,5 @@
+"use client";
+
 import useEmblaCarousel from "embla-carousel-react";
 import { SkillsSlidesContentType } from "../SkillsContent";
 import { useEffect, useRef, useState } from "react";
@@ -15,7 +17,11 @@ type TextCarouselProps = {
 
 export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [Fade()]);
+
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
+
   const lightbox = useOverlay();
 
   const slidesTitle: string[] = slides.map((slide) => slide.title);
@@ -24,8 +30,13 @@ export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
 
   useEffect(() => {
     if (!emblaApi) return;
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+
     emblaApi.on("select", onSelect);
+
     return () => {
       emblaApi.off("select", onSelect);
     };
@@ -49,14 +60,31 @@ export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
               className="flex flex-col w-full min-w-0 shrink-0 grow-0 basis-full gap-2"
             >
               <Heading as="h2">{slide.title}</Heading>
+
               <div className="flex flex-col justify-between gap-10 md:flex-col xl:flex-row">
                 <p className={paragraphStyle}>{slide.content}</p>
+
                 <Image
-                  className="rounded-xl cursor-zoom-in border border-white/40 md:mx-auto"
+                  className={`
+                    rounded-xl
+                    cursor-zoom-in
+                    border
+                    border-white/40
+                    md:mx-auto
+                    transition-opacity
+                    duration-500
+                    ${loadedImages[i] ? "opacity-100" : "opacity-0"}
+                  `}
                   alt={slide.title}
                   src={slide.image}
                   width={700}
                   height={550}
+                  onLoad={() =>
+                    setLoadedImages((prev) => ({
+                      ...prev,
+                      [i]: true,
+                    }))
+                  }
                   onClick={() => lightbox.open(slide.image)}
                 />
               </div>
@@ -64,7 +92,9 @@ export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
           ))}
         </div>
       </div>
+
       <CarouselTextDots emblaApi={emblaApi} slidesTitle={slidesTitle} />
+
       <Lightbox
         boxW={80}
         boxH={80}

@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { LINKEDIN, GITHUB } from "@/src/lib/const";
 import { IconLink } from "../IconLink";
 import { SplitLayout } from "../layout/SplitLayout";
+import { ProfileFlipCard } from "../ProfileFlipCard";
 
 export function Hero() {
   return (
@@ -59,29 +60,7 @@ export function Hero() {
         </div>
       </SplitLayout.Left>
       <SplitLayout.Right>
-        <div className="perspective-distant w-full">
-          {/* <Image
-            src="/images/profile-picture/profile.jpeg"
-            alt="Foto de perfil"
-            width={800}
-            height={800}
-            className={clsx(
-              "w-full",
-              "max-w-140",
-              "mx-auto",
-              "max-w-[clamp(35rem6vw40rem)]",
-              "object-cover",
-              "rounded-[30px]",
-              "origin-center",
-              "transition-transform",
-              "duration-500",
-              "ease-in-out",
-              "hover:rotate-y-18",
-              "hover:rotate-x-6",
-              "lg:max-h-140",
-            )}
-          /> */}
-        </div>
+        <ProfileFlipCard />
       </SplitLayout.Right>
     </SplitLayout>
   );

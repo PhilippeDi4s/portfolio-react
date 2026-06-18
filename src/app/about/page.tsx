@@ -7,8 +7,12 @@ import { timelineItems } from "@/src/components/about/TimelineItems";
 import { Heading } from "@/src/components/Heading";
 import { Section } from "@/src/components/Section";
 import { SectionDivider } from "@/src/components/SectionDivider";
+import { useEffect } from "react";
 
 export default function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const paragraphStyle =
     "indent-2 leading-7 hyphens-auto text-justify md:leading-10 lg:indent-4";
 

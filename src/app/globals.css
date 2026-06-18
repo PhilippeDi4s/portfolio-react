@@ -110,7 +110,7 @@ h2 {
     font-family: var(--font-heading);
   }
 
-    .scrollbar-none {
+  .scrollbar-none {
     scrollbar-width: none;
     &::-webkit-scrollbar {
       display: none;
@@ -125,5 +125,20 @@ h2 {
     box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.13) inset;
     -webkit-text-fill-color: #ffffff;
     transition: background-color 9999s ease-in-out 0s;
+  }
+}
+
+@theme {
+  --animate-text-pulse-green: text-pulse-green 1.5s ease-in-out infinite;
+
+  @keyframes text-pulse-green {
+    0%,
+    100% {
+      color: theme(colors.green.800);
+    }
+
+    50% {
+      color: theme(colors.green.400);
+    }
   }
 }
