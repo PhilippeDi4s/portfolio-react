@@ -65,25 +65,16 @@ export function TextCarousel({ slides, paragraphStyle }: TextCarouselProps) {
                 <p className={paragraphStyle}>{slide.content}</p>
 
                 <Image
-                  className={`
-                    rounded-xl
-                    cursor-zoom-in
-                    border
-                    border-white/40
-                    md:mx-auto
-                    transition-opacity
-                    duration-500
-                    ${loadedImages[i] ? "opacity-100" : "opacity-0"}
-                  `}
+                  className={`...`}
                   alt={slide.title}
                   src={slide.image}
                   width={700}
                   height={550}
+                  sizes="700px"
+                  priority={i === 0}
+                  loading={i === 0 ? undefined : "eager"}
                   onLoad={() =>
-                    setLoadedImages((prev) => ({
-                      ...prev,
-                      [i]: true,
-                    }))
+                    setLoadedImages((prev) => ({ ...prev, [i]: true }))
                   }
                   onClick={() => lightbox.open(slide.image)}
                 />
